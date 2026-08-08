@@ -18,8 +18,15 @@
             <div class="logo">
                 BRAZO ROBÓTICO ESFÉRICO
             </div>
+            
+            <!-- Botón de menú para móviles -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#descripcion">Descripción</a>
                 <a href="#componentes">Componentes</a>
@@ -424,7 +431,26 @@ void antihorario (){
             });
         }
     </script>
+    
+    <!-- Script del menú hamburguesa -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
 
+        // Alternar el menú al hacer clic en el botón
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Cerrar el menú al hacer clic en cualquier enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('is-active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 
     <!-- Pie de página -->
     <footer>
