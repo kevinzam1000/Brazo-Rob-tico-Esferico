@@ -165,7 +165,7 @@ ul {
 
 .specs-grid, .components-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
     margin-top: 20px;
 }
@@ -176,6 +176,19 @@ ul {
     border-radius: 8px;
     border-left: 4px solid #2563eb;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.component-img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #e5e7eb;
+    padding: 5px;
 }
 
 .spec-card h3, .component-card h3 {
@@ -188,6 +201,49 @@ ul {
     margin: 0;
     font-size: 14px;
     color: #4b5563;
+}
+
+.component-card.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Indicadores LED */
+.led-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.led-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.led-badge {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.status-green { 
+    background-color: #10b981; 
+    box-shadow: 0 0 6px #10b981; 
+}
+
+.status-orange { 
+    background-color: #f59e0b; 
+    box-shadow: 0 0 6px #f59e0b; 
+}
+
+.status-red { 
+    background-color: #ef4444; 
+    box-shadow: 0 0 6px #ef4444; 
 }
 
 
