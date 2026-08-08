@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brazo Robótico Esférico</title>
+  <title>Brazo Robótico Esférico | Proyecto de Ingeniería</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <!-- Encabezado y Navegación -->
   <header class="header">
     <nav class="navbar">
-      <!-- Título de la marca -->
       <a href="#inicio" class="nav-brand">BRAZO ROBÓTICO ESFÉRICO</a>
 
-      <!-- Botón Hamburguesa para Móvil -->
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
-        &#9776;
+      <!-- Botón de Menú Hamburguesa -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </button>
 
-      <!-- Menú de Navegación -->
+      <!-- Lista de Enlaces -->
       <ul class="nav-menu" id="navMenu">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#descripcion">Descripción</a></li>
@@ -28,45 +30,146 @@
     </nav>
   </header>
 
+  <!-- Contenido Principal -->
   <main>
-    <section id="inicio" class="hero">
-      <h1>Brazo Robótico Esférico</h1>
-      <p>Bienvenido al portal del proyecto.</p>
+
+    <!-- Sección Inicio / Hero -->
+    <section id="inicio" class="hero-section">
+      <div class="container">
+        <span class="badge">Robótica y Automatización</span>
+        <h1>Sistema de Control y Diseño del Brazo Robótico Esférico</h1>
+        <p class="hero-text">
+          Plataforma mecatrónica de lazo cerrado instrumentada con encoders magnéticos absolutos, controladores de potencia a pasos y arquitectura de procesamiento basada en microcontrolador.
+        </p>
+        <div class="hero-buttons">
+          <a href="#descripcion" class="btn btn-primary">Ver Descripción</a>
+          <a href="#componentes" class="btn btn-secondary">Ver Componentes</a>
+        </div>
+      </div>
     </section>
 
-    <section id="descripcion">
-      <h2>Descripción</h2>
-      <p>Detalles e información general sobre el sistema robótico.</p>
+    <!-- Sección Descripción -->
+    <section id="descripcion" class="section">
+      <div class="container">
+        <h2 class="section-title">Descripción del Proyecto</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Propósito y Diseño</h3>
+            <p>
+              Desarrollo integral de un manipulador de configuración esférica enfocado en la precisión posicional, modelado de cinemática inversa/directa e integración de sensores magnéticos para retroalimentación en tiempo real.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Alcance Técnico</h3>
+            <ul>
+              <li>Modelado geométrico y cinemático mediante matrices Denavit-Hartenberg.</li>
+              <li>Sistema de control en lazo cerrado para prevención de pérdida de pasos.</li>
+              <li>Montaje modular de electrónica de potencia sobre estructura rígida.</li>
+              <li>Simulación del lazo de control y análisis de respuesta dinámico.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="componentes">
-      <h2>Componentes</h2>
-      <p>Listado de hardware, controladores y estructura del brazo.</p>
+    <!-- Sección Componentes -->
+    <section id="componentes" class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title">Componentes Principales</h2>
+        <div class="grid-cards">
+          <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Actuadores</h3>
+            <p>Motores a pasos NEMA 17 para las articulaciones principales y servomotores para mecanismos finales.</p>
+          </div>
+          <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Controladores de Potencia</h3>
+            <p>Drivers TB6600 con configuración de micropasos y gestión activa de corriente por bobina.</p>
+          </div>
+          <div class="card">
+            <div class="icon">📡</div>
+            <h3>Sensórica Posicional</h3>
+            <p>Encoders magnéticos absolutos para lectura constante de ángulo sin requerir rutina de 'homing'.</p>
+          </div>
+          <div class="card">
+            <div class="icon">💻</div>
+            <h3>Unidad de Control</h3>
+            <p>Microcontrolador programado para procesamiento de lazo cerrado e interpretación de trayectoria.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="especificaciones">
-      <h2>Especificaciones</h2>
-      <p>Parámetros mecánicos, cinemática y control.</p>
+    <!-- Sección Especificaciones -->
+    <section id="especificaciones" class="section">
+      <div class="container">
+        <h2 class="section-title">Especificaciones Técnicas</h2>
+        <div class="table-wrapper">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Parámetro</th>
+                <th>Detalle Técnico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Configuración Cinemática</td>
+                <td>Esférica (Dos articulaciones rotacionales + Una prismática)</td>
+              </tr>
+              <tr>
+                <td>Tipo de Control</td>
+                <td>Lazo Cerrado (Closed-Loop)</td>
+              </tr>
+              <tr>
+                <td>Mapeo Posicional</td>
+                <td>Encoder magnético absoluto acoplado por banda de tiempo</td>
+              </tr>
+              <tr>
+                <td>Driver Principal</td>
+                <td>TB6600 (Entradas Optoacopladas)</td>
+              </tr>
+              <tr>
+                <td>Estructura y Racks</td>
+                <td>Perfilería de aluminio extruido y bases mecanizadas</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
+
   </main>
 
-  <!-- Script para la funcionalidad del menú responsivo -->
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Brazo Robótico Esférico. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script interactivo para el menú responsivo -->
   <script>
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
 
-    // Alternar menú al presionar el botón hamburguesa
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          navToggle.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
 
-    // Cerrar el menú desplegable al hacer clic en cualquier opción
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-      });
+        // Cierra el menú al presionar cualquier enlace
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+          });
+        });
+      }
     });
   </script>
-
 </body>
 </html>
