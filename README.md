@@ -1,2 +1,2 @@
-# Brazo-Rob-tico-Esferico
+# Brazo-Robtico-Esferico
 Brazo robótico desarrollado como proyecto de mecatrónica.
