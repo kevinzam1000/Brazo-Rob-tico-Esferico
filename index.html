@@ -81,23 +81,62 @@
 
     <!-- Componentes -->
     <section id="componentes">
-        <h2>Componentes Principales</h2>
+        <h2>Componentes Electrónicos y Hardware</h2>
+        <p>
+            El sistema de control y potencia está integrado por componentes de grado mecatrónico,
+            diseñados para garantizar precisión articular, alimentación constante e interfaz de diagnóstico en tiempo real.
+        </p>
+
         <div class="components-grid">
             <div class="component-card">
-                <h3>Arduino Mega</h3>
-                <p>Microcontrolador encargado del procesamiento numérico de coordenadas y generación de pulsos para los drivers[cite: 1].</p>
+                <img src="img/arduinomega.jpg" alt="Arduino Mega 2560" class="component-img">
+                <h3>Arduino Mega 2560</h3>
+                <p>Microcontrolador principal encargado del procesamiento numérico de la cinemática inversa, generación de pulsos y lectura de entradas digitales[cite: 1, 3].</p>
             </div>
+
             <div class="component-card">
-                <h3>Motores NEMA 17 & Driver TB6600</h3>
-                <p>Proporcionan el torque adecuado para el movimiento articular y el control de fuerza en los ejes[cite: 1, 3].</p>
+                <img src="img/17HS4401.jpg" alt="Motor Paso a Paso NEMA 17" class="component-img">
+                <h3>2x Motores NEMA 17 (17HS4401S)</h3>
+                <p>Actuadores paso a paso bipolares que proporcionan el torque e inercia necesarios para el posicionamiento de los ejes de rotación[cite: 1, 3].</p>
             </div>
+
             <div class="component-card">
-                <h3>Sensor Magnético AS5600</h3>
-                <p>Encoder absoluto I2C de 12 bits para lectura angular precisa y verificación de posición del eje[cite: 1].</p>
+                <img src="img/tb6600.jpg" alt="Driver TB6600" class="component-img">
+                <h3>2x Drivers TB6600</h3>
+                <p>Módulos de potencia ajustables con control de micropasos y aislamiento por optoacopladores para alimentar los motores NEMA 17[cite: 1, 3].</p>
             </div>
+
             <div class="component-card">
+                <img src="img/28byj.jpg" alt="Motor 28BYJ-48" class="component-img">
                 <h3>Motor 28BYJ-48</h3>
-                <p>Actuador auxiliar compacto utilizado para mecanismos secundarios o efector final[cite: 1].</p>
+                <p>Actuador unipolar compacto utilizado para la tracción y control de extensión de la cremallera del brazo[cite: 1, 3].</p>
+            </div>
+
+            <div class="component-card">
+                <img src="img/uln2003.jpg" alt="Driver ULN2003" class="component-img">
+                <h3>Driver ULN2003APG</h3>
+                <p>Módulo con arreglo de transistores Darlington encargado de la conmutación de corriente para las bobinas del motor 28BYJ-48.</p>
+            </div>
+
+            <div class="component-card">
+                <img src="img/fuente.jpg" alt="Fuente Conmutada 12V 10A" class="component-img">
+                <h3>Fuente Conmutada 12V 10A</h3>
+                <p>Unidad de alimentación regulada de alta capacidad que entrega energía constante a las etapas de potencia sin caídas de tensión.</p>
+            </div>
+
+            <div class="component-card">
+                <h3>Pulsadores de Control Físico</h3>
+                <p>Entradas digitales dedicadas: un botón para iniciar la secuencia de movimiento y otro para el habilitador/liberación manual de motores[cite: 3].</p>
+            </div>
+
+            <div class="component-card full-width">
+                <h3>Indicadores LED de Estado</h3>
+                <p>Sistema visual de retroalimentación en tiempo real sobre la condición operacional del robot[cite: 3]:</p>
+                <ul class="led-list">
+                    <li><span class="led-badge status-green"></span> <strong>Verde:</strong> Sistema en ejecución (motores en movimiento)[cite: 3].</li>
+                    <li><span class="led-badge status-orange"></span> <strong>Naranja:</strong> Sistema en estado de pausa o liberación manual[cite: 3].</li>
+                    <li><span class="led-badge status-red"></span> <strong>Rojo:</strong> Bloqueo de seguridad activado por riesgo de colisión[cite: 3].</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -398,6 +437,9 @@ void antihorario (){
         </p>
     </footer>
 
+</body>
+
+</html>
 </body>
 
 </html>
