@@ -1,175 +1,438 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brazo Robótico Esférico | Proyecto de Ingeniería</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brazo Robótico Esférico | Proyecto de Mecatrónica</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Encabezado y Navegación -->
-  <header class="header">
+    <!-- Barra de navegación -->
     <nav class="navbar">
-      <a href="#inicio" class="nav-brand">BRAZO ROBÓTICO ESFÉRICO</a>
+        <div class="nav-container">
+            <div class="logo">
+                BRAZO ROBÓTICO ESFÉRICO
+            </div>
 
-      <!-- Botón de Menú Hamburguesa -->
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
-      <!-- Lista de Enlaces -->
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#descripcion">Descripción</a></li>
-        <li><a href="#componentes">Componentes</a></li>
-        <li><a href="#especificaciones">Especificaciones</a></li>
-      </ul>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#descripcion">Descripción</a>
+                <a href="#componentes">Componentes</a>
+                <a href="#especificaciones">Especificaciones</a>
+                <a href="#funcionamiento">Funcionamiento</a>
+                <a href="#diseno">Diseño</a>
+                <a href="#programacion">Programación</a>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <!-- Contenido Principal -->
-  <main>
 
-    <!-- Sección Inicio / Hero -->
-    <section id="inicio" class="hero-section">
-      <div class="container">
-        <span class="badge">Robótica y Automatización</span>
-        <h1>Sistema de Control y Diseño del Brazo Robótico Esférico</h1>
-        <p class="hero-text">
-          Plataforma mecatrónica de lazo cerrado instrumentada con encoders magnéticos absolutos, controladores de potencia a pasos y arquitectura de procesamiento basada en microcontrolador.
+    <!-- 1. Inicio -->
+    <header id="inicio">
+        <h1>Brazo Robótico Esférico</h1>
+        <p>Proyecto Integrador de Mecatrónica</p>
+        <img src="Brazo_Robotico.jpg" alt="Brazo Robótico Esférico">
+    </header>
+
+
+    <!-- 2. Descripción -->
+    <section id="descripcion">
+        <h2>Descripción del Proyecto</h2>
+        <p>
+            Este proyecto aborda la concepción, modelado matemático y fabricación de un <strong>brazo robótico de articulación esférica (R-R-P)</strong>, diseñado para ejecutar tareas de posicionamiento tridimensional con alta precisión.
         </p>
-        <div class="hero-buttons">
-          <a href="#descripcion" class="btn btn-primary">Ver Descripción</a>
-          <a href="#componentes" class="btn btn-secondary">Ver Componentes</a>
-        </div>
-      </div>
+        <p>
+            Mediante la combinación de cinemática inversa calculada en tiempo real, actuadores paso a paso de alto torque y un algoritmo preventivo de protección anti-colisión, la plataforma transforma coordenadas cartesianas arbitrarias (X, Y, Z) en movimientos articulados fluidos y coordinados, respaldados por una interfaz física de control e indicadores visuales de estado.
+        </p>
     </section>
 
-    <!-- Sección Descripción -->
-    <section id="descripcion" class="section">
-      <div class="container">
-        <h2 class="section-title">Descripción del Proyecto</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>Propósito y Diseño</h3>
-            <p>
-              Desarrollo integral de un manipulador de configuración esférica enfocado en la precisión posicional, modelado de cinemática inversa/directa e integración de sensores magnéticos para retroalimentación en tiempo real.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Alcance Técnico</h3>
-            <ul>
-              <li>Modelado geométrico y cinemático mediante matrices Denavit-Hartenberg.</li>
-              <li>Sistema de control en lazo cerrado para prevención de pérdida de pasos.</li>
-              <li>Montaje modular de electrónica de potencia sobre estructura rígida.</li>
-              <li>Simulación del lazo de control y análisis de respuesta dinámico.</li>
-            </ul>
-          </div>
+
+    <!-- 3. Componentes -->
+    <section id="componentes">
+        <h2>Componentes Electrónicos y Hardware</h2>
+        <p>
+            El sistema de potencia y control utiliza componentes mecatrónicos seleccionados para asegurar la resolución de pasos, la estabilidad térmica del sistema y la confiabilidad operativa.
+        </p>
+
+        <div class="components-grid">
+            <div class="component-card">
+                <img src="img/arduinomega.jpg" alt="Arduino Mega 2560" class="component-img">
+                <h3>Arduino Mega 2560</h3>
+                <p>Unidad central de procesamiento encargada del cálculo cinemático, la generación de señales de tiempo y la gestión de periféricos de entrada y salida.</p>
+            </div>
+
+            <div class="component-card">
+                <img src="img/17HS4401.jpg" alt="Motor Paso a Paso NEMA 17" class="component-img">
+                <h3>2x Motores NEMA 17 (17HS4401S)</h3>
+                <p>Actuadores bipolares responsables de la rotación azimutal (θ1) y la elevación polar (θ2), aportando la fuerza necesaria para vencer la inercia de la estructura.</p>
+            </div>
+
+            <div class="component-card">
+                <img src="img/tb6600.jpg" alt="Driver TB6600" class="component-img">
+                <h3>2x Drivers TB6600</h3>
+                <p>Etapas de potencia con regulación de corriente constante y aislamiento óptico, optimizadas para un manejo eficiente de micropasos.</p>
+            </div>
+
+            <div class="component-card">
+                <img src="img/28byj.jpg" alt="Motor 28BYJ-48" class="component-img">
+                <h3>Motor 28BYJ-48</h3>
+                <p>Actuador de precisión para la transmisión lineal de la cremallera (e), responsable del desplazamiento prismático del efector final.</p>
+            </div>
+
+            <div class="component-card">
+                <img src="img/uln2003.jpg" alt="Driver ULN2003APG" class="component-img">
+                <h3>Driver ULN2003APG</h3>
+                <p>Controlador con arreglo de transistores Darlington enfocado en la conmutación de fases para el motor unipolar de la cremallera.</p>
+            </div>
+
+            <div class="component-card">
+                <img src="img/fuente.jpg" alt="Fuente Conmutada 12V 10A" class="component-img">
+                <h3>Fuente Conmutada 12V 10A</h3>
+                <p>Suministro de energía regulada de alto rendimiento que previene caídas de voltaje ante demandas pico de torque simultáneas.</p>
+            </div>
+
+            <div class="component-card">
+                <h3>Pulsadores de Control Físico</h3>
+                <p>Interrupción y ejecución manual: un pulsador inicia la trayectoria cinemática programada y el segundo alterna la liberación electromagnética de las bobinas de los motores.</p>
+            </div>
+
+            <div class="component-card full-width">
+                <h3>Indicadores LED de Estado</h3>
+                <p>Interfaz óptica de diagnóstico operacional instantáneo:</p>
+                <ul class="led-list">
+                    <li><span class="led-badge status-green"></span> <strong>Verde:</strong> Sistema en ejecución activa y secuencias de movimiento en curso.</li>
+                    <li><span class="led-badge status-orange"></span> <strong>Naranja:</strong> Modo de pausa o motores desenergizados manualmente para ajuste libre.</li>
+                    <li><span class="led-badge status-red"></span> <strong>Rojo:</strong> Interrupción de seguridad por trayectoria fuera de rango o peligro de colisión.</li>
+                </ul>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Sección Componentes -->
-    <section id="componentes" class="section bg-alt">
-      <div class="container">
-        <h2 class="section-title">Componentes Principales</h2>
-        <div class="grid-cards">
-          <div class="card">
-            <div class="icon">⚙️</div>
-            <h3>Actuadores</h3>
-            <p>Motores a pasos NEMA 17 para las articulaciones principales y servomotores para mecanismos finales.</p>
-          </div>
-          <div class="card">
-            <div class="icon">⚡</div>
-            <h3>Controladores de Potencia</h3>
-            <p>Drivers TB6600 con configuración de micropasos y gestión activa de corriente por bobina.</p>
-          </div>
-          <div class="card">
-            <div class="icon">📡</div>
-            <h3>Sensórica Posicional</h3>
-            <p>Encoders magnéticos absolutos para lectura constante de ángulo sin requerir rutina de 'homing'.</p>
-          </div>
-          <div class="card">
-            <div class="icon">💻</div>
-            <h3>Unidad de Control</h3>
-            <p>Microcontrolador programado para procesamiento de lazo cerrado e interpretación de trayectoria.</p>
-          </div>
+
+    <!-- 4. Especificaciones Técnicas -->
+    <section id="especificaciones">
+        <h2>Especificaciones Técnicas</h2>
+        <p>
+            Parámetros clave del desempeño estructural, eléctrico y de procesamiento del manipulador:
+        </p>
+        <div class="specs-grid">
+            <div class="spec-card">
+                <h3>Arquitectura Cinemática</h3>
+                <p>Configuración Esférica 3 DOF (Rotacional - Rotacional - Prismática)</p>
+            </div>
+            <div class="spec-card">
+                <h3>Capacidad de Procesamiento</h3>
+                <p>Cálculo trigonométrico e interpolación lineal a 16 MHz en Arduino Mega</p>
+            </div>
+            <div class="spec-card">
+                <h3>Unidad de Potencia</h3>
+                <p>Alimentación principal a 12V DC con capacidad de entrega de 10 Amperios</p>
+            </div>
+            <div class="spec-card">
+                <h3>Límites Operativos</h3>
+                <p>Protección automática en elevación θ2 y carrera máxima de extensión lineal e</p>
+            </div>
+            <div class="spec-card">
+                <h3>Control de Actuación</h3>
+                <p>Control por pulsos y dirección (PUL/DIR) con aceleración progresiva implementada</p>
+            </div>
+            <div class="spec-card">
+                <h3>Interfaz de Usuario</h3>
+                <p>Monitoreo mediante puerto serie, pulsadores físicos e indicadores LED de 3 estados</p>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Sección Especificaciones -->
-    <section id="especificaciones" class="section">
-      <div class="container">
-        <h2 class="section-title">Especificaciones Técnicas</h2>
-        <div class="table-wrapper">
-          <table class="spec-table">
-            <thead>
-              <tr>
-                <th>Parámetro</th>
-                <th>Detalle Técnico</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Configuración Cinemática</td>
-                <td>Esférica (Dos articulaciones rotacionales + Una prismática)</td>
-              </tr>
-              <tr>
-                <td>Tipo de Control</td>
-                <td>Lazo Cerrado (Closed-Loop)</td>
-              </tr>
-              <tr>
-                <td>Mapeo Posicional</td>
-                <td>Encoder magnético absoluto acoplado por banda de tiempo</td>
-              </tr>
-              <tr>
-                <td>Driver Principal</td>
-                <td>TB6600 (Entradas Optoacopladas)</td>
-              </tr>
-              <tr>
-                <td>Estructura y Racks</td>
-                <td>Perfilería de aluminio extruido y bases mecanizadas</td>
-              </tr>
-            </tbody>
-          </table>
+
+    <!-- 5. Funcionamiento -->
+    <section id="funcionamiento">
+        <h2>Funcionamiento y Demostración</h2>
+        <p>
+            El flujo de trabajo inicia cuando el microcontrolador evalúa las coordenadas de destino (X, Y, Z). A través de las funciones trigonométricas en C++, determina los ángulos exactos θ1, θ2 y la extensión requerida e.
+        </p>
+        <p>
+            Antes de activar los motores, el algoritmo valida que las coordenadas no violen los límites de colisión físicos. Si la trayectoria es segura, el LED verde se enciende y los motores ejecutan la secuencia de movimiento paso a paso.
+        </p>
+        
+        <div class="video-container-local">
+            <video controls preload="metadata" poster="Brazo_Robotico.jpg">
+                <source src="demostracion_Brazo.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video HTML5.
+            </video>
         </div>
-      </div>
+        <p class="video-note"><em>* Video de demostración temporal del entorno de pruebas. Próximamente se actualizará con la prueba del mecanismo final.</em></p>
     </section>
 
-  </main>
 
-  <!-- Pie de página -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Brazo Robótico Esférico. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+    <!-- 6. Diseño mecánico -->
+    <section id="diseno">
+        <h2>Diseño Mecánico</h2>
+        <p>
+            El brazo robótico fue diseñado mediante modelado CAD 3D (SolidWorks). Esta sección incluirá los esquemas de transmisión, soportes estructurales, planos de ensamble y dimensiones del mecanismo esférico.
+        </p>
+    </section>
 
-  <!-- Script interactivo para el menú responsivo -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const navToggle = document.getElementById('navToggle');
-      const navMenu = document.getElementById('navMenu');
 
-      if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-          navToggle.classList.toggle('active');
-          navMenu.classList.toggle('active');
-        });
+    <!-- 7. Programación -->
+    <section id="programacion">
+        <h2>Programación y Control</h2>
+        <p>
+            El firmware en C++ calcula la cinemática inversa a partir de las coordenadas cartesianas de entrada (X, Y, Z) para determinar los ángulos articulados (th1, th2) y la extensión de la cremallera (e). Incluye algoritmos de protección anti-colisión en tiempo real, habilitador manual y aceleración gradual para los motores paso a paso.
+        </p>
 
-        // Cierra el menú al presionar cualquier enlace
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-          link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-          });
-        });
+        <div class="code-header">
+            <span>Brazo_Esferico_Control.ino</span>
+            <button onclick="copiarCodigo()" id="btn-copy" class="btn-copy">Copiar código</button>
+        </div>
+
+        <div class="code-block">
+<pre><code id="codigo-arduino">float x = -130;
+float y = 150;
+float z = -80;
+float th1 = 0;
+float th1n = 0;
+float th2 = 0;
+float th2n = 0;
+float h = 0;
+float e = 0;
+float a = 0;
+
+const int enaPin = 34;
+const int dirPin = 36;
+const int pulPin = 38;
+
+const int enaPin2 = 35;
+const int dirPin2 = 37;
+const int pulPin2 = 39;
+
+int ppv = 2048;
+float con = 0;
+float cona = 0;
+int pasos = 0;
+int pinan = 0;
+
+int paro = 19;
+int pausa = 20;
+int giro = 21;
+int ini = 8;
+int inia;
+int inic;
+int fre = 9;
+int fren;
+int frea;
+int cuen;
+
+void setup() {
+  Serial.begin(9600);
+
+  pinMode(enaPin, OUTPUT);
+  pinMode(dirPin, OUTPUT);
+  pinMode(pulPin, OUTPUT);
+
+  pinMode(enaPin2, OUTPUT);
+  pinMode(dirPin2, OUTPUT);
+  pinMode(pulPin2, OUTPUT);
+
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+
+  pinMode(paro, OUTPUT);
+  pinMode(giro, OUTPUT);
+  pinMode(inic, INPUT);
+  pinMode(fre, INPUT);
+
+  digitalWrite(enaPin, HIGH); 
+  digitalWrite(enaPin2, HIGH);
+  digitalWrite(paro, LOW);
+
+  a = y - 81.5;
+
+  th1 = atan2(x,(z*-1))* (180 / PI);
+  h = sqrt(x*x + z*z);
+  th2 = atan2(a,h) * (180 / PI);
+  e = ((sqrt(a*a + h*h)) - 50); // Va a ser e-78mm porque es lo menos que puede estar la cremallera, 
+  con = (e - 78) / 10;          // e incluso menos con la restriccion del espacio
+}
+
+void loop() {
+  inic = digitalRead(ini);
+  Serial.println(e);
+  Serial.println(con);
+  fren = digitalRead(fre);
+
+  // Habilitador manual
+  if (fren == HIGH &amp;&amp; frea == LOW){
+    cuen = !cuen;   // Cambia entre 0 y 1
+    digitalWrite(enaPin, cuen);
+    digitalWrite(enaPin2, cuen);
+  }
+
+  if (th2 &gt; 45 &amp;&amp; e &lt; 113){
+    Serial.println("Motor bloqueado por riesgo de colision");
+    digitalWrite(paro, HIGH);
+  }
+  else if (th2 &lt; (-21.6) || e &lt; 55){
+    Serial.println("Motor bloqueado por riesgo de colision");
+    digitalWrite(paro, HIGH);
+  }
+  else {
+    Serial.println("Todo good");
+  
+    // Secuencia de giro
+    if (inic == HIGH &amp;&amp; inia == LOW){ 
+      Serial.println("Ya empezo");
+      if(con &lt; 0){
+        cona = con * (-1);
+        pasos = (ppv * cona) / 12.6;
+        horario();
       }
-    });
-  </script>
+    
+      if(con &gt; 0){
+        pasos = (ppv * con) / 12.6;
+        antihorario();
+      }
+      delay(500);
+      
+      if (th1 &lt; 0){
+        run();
+        digitalWrite(dirPin, LOW);
+        th1n = th1 * (-1);
+        gira1(th1n);
+      }
+      if (th1 &gt; 0){
+        run();
+        digitalWrite(dirPin, HIGH);
+        gira1(th1);
+      }
+      delay(500);
+
+      if (th2 &lt; 0) {
+        run();
+        digitalWrite(dirPin2, LOW);
+        th2n = th2 * (-1);
+        gira2(th2n);
+      }
+      if (th2 &gt; 0) {
+        run();
+        digitalWrite(dirPin2, HIGH);
+        gira2(th2);
+      }
+      delay(500);
+    }
+  }
+
+  stop();
+  delay(50);
+  inia = inic;
+  frea = fren;
+}
+
+void run(){
+  digitalWrite(pausa, LOW);
+  digitalWrite(giro, HIGH);
+}
+
+void stop(){
+  digitalWrite(giro, LOW);
+  digitalWrite(pausa, HIGH);
+}
+
+void gira1(long pul1) {
+  long totalPasos1 = (pul1 / 360.0) * 1600.0;
+
+  for (long paso1 = 0; paso1 &lt; totalPasos1; paso1++) {
+    int velocidad1 = 800;
+
+    if (paso1 &lt; 10) {
+      velocidad1 = map(paso1, 0, 10, 3000, 800);
+    }
+
+    digitalWrite(pulPin, HIGH);
+    delayMicroseconds(velocidad1);
+    digitalWrite(pulPin, LOW);
+    delayMicroseconds(velocidad1);
+  }
+}
+
+void gira2(long pul2) {
+  long totalPasos2 = (pul2 / 360.0) * 1600.0;
+
+  for (long paso2 = 0; paso2 &lt; totalPasos2; paso2++) {
+    int velocidad2 = 800;
+
+    if (paso2 &lt; 10) {
+      velocidad2 = map(paso2, 0, 10, 3000, 800);
+    }
+
+    digitalWrite(pulPin2, HIGH);
+    delayMicroseconds(velocidad2);
+    digitalWrite(pulPin2, LOW);
+    delayMicroseconds(velocidad2);
+  }
+}
+
+void horario (){
+  for (int i = 0; i &lt; pasos; i++){
+    int pin = i % 4 + 2; 
+    digitalWrite(pin, HIGH);
+    digitalWrite(pinan, LOW);
+    delayMicroseconds(800);
+    Serial.println(pin);
+    pinan = pin;
+  }
+}
+
+void antihorario (){
+  for (int i = 0; i &lt; pasos; i++){
+    int pin = (i % 4 - 5) * (-1); 
+    digitalWrite(pin, HIGH);
+    digitalWrite(pinan, LOW);
+    delayMicroseconds(800);
+    Serial.println(pin);
+    pinan = pin;
+  }
+}</code></pre>
+        </div>
+
+        <div class="code-footer">
+            <a href="https://github.com/kevinzam1000/Brazo-Rob-tico-Esferico" target="_blank" class="btn-github">
+                Ver repositorio completo en GitHub
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Script de copiado al portapapeles -->
+    <script>
+        function copiarCodigo() {
+            const codigo = document.getElementById('codigo-arduino').innerText;
+            navigator.clipboard.writeText(codigo).then(() => {
+                const btn = document.getElementById('btn-copy');
+                btn.innerText = '¡Copiado!';
+                btn.style.backgroundColor = '#10b981';
+                setTimeout(() => {
+                    btn.innerText = 'Copiar código';
+                    btn.style.backgroundColor = '#3b82f6';
+                }, 2000);
+            });
+        }
+    </script>
+
+
+    <!-- Pie de página -->
+    <footer>
+        <p>
+            Proyecto de Brazo Robótico Esférico · Mecatrónica
+        </p>
+    </footer>
+
 </body>
+
 </html>
