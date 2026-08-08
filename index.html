@@ -22,12 +22,11 @@
             <div class="nav-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#descripcion">Descripción</a>
-                <a href="#especificaciones">Especificaciones</a>
                 <a href="#componentes">Componentes</a>
+                <a href="#especificaciones">Especificaciones</a>
                 <a href="#funcionamiento">Funcionamiento</a>
-                <a href="#demostracion">Demostración</a>
-                <a href="#diseno">Diseño</a>
                 <a href="#programacion">Programación</a>
+                <a href="#diseno">Diseño</a>
             </div>
         </div>
     </nav>
@@ -45,37 +44,11 @@
     <section id="descripcion">
         <h2>Descripción del Proyecto</h2>
         <p>
-            Este proyecto consiste en el diseño, análisis cinemático y construcción de un brazo
-            robótico de configuración esférica controlado mediante un microcontrolador Arduino[cite: 1].
+            Este proyecto aborda la concepción, modelado matemático y fabricación de un <strong>brazo robótico de articulación esférica (R-R-P)</strong>, diseñado para ejecutar tareas de posicionamiento tridimensional con alta precisión.
         </p>
         <p>
-            El sistema permite calcular y ejecutar trayectorias exactas para posicionar el brazo en coordenadas específicas,
-            utilizando motores paso a paso, sistemas de transmisión por correa y retroalimentación de posición mediante un encoder magnético absoluto[cite: 1].
+            Mediante la combinación de cinemática inversa calculada en tiempo real, actuadores de paso a paso de alto torque y un algoritmo preventivo de protección anti-colisión, la plataforma transforma coordenadas cartesianas arbitrarias $(X, Y, Z)$ en movimientos articulados fluidos y coordinados, respaldados por una interfaz física de control e indicadores visuales de estado.
         </p>
-    </section>
-
-
-    <!-- Especificaciones Técnicas -->
-    <section id="especificaciones">
-        <h2>Especificaciones Técnicas</h2>
-        <div class="specs-grid">
-            <div class="spec-card">
-                <h3>Geometría</h3>
-                <p>Configuración Esférica (R-R-P)</p>
-            </div>
-            <div class="spec-card">
-                <h3>Controlador Central</h3>
-                <p>Arduino Mega 2560[cite: 1]</p>
-            </div>
-            <div class="spec-card">
-                <h3>Actuación Principal</h3>
-                <p>Motores NEMA 17 + Driver TB6600[cite: 1]</p>
-            </div>
-            <div class="spec-card">
-                <h3>Sensor de Posición</h3>
-                <p>Encoder Magnético Absoluto AS5600[cite: 1]</p>
-            </div>
-        </div>
     </section>
 
 
@@ -83,60 +56,94 @@
     <section id="componentes">
         <h2>Componentes Electrónicos y Hardware</h2>
         <p>
-            El sistema de control y potencia está integrado por componentes de grado mecatrónico,
-            diseñados para garantizar precisión articular, alimentación constante e interfaz de diagnóstico en tiempo real.
+            El sistema de potencia y control utiliza componentes mecatrónicos seleccionados para asegurar la resolución de pasos, la estabilidad térmica del sistema y la confiabilidad operativa.
         </p>
 
         <div class="components-grid">
             <div class="component-card">
                 <img src="img/arduinomega.jpg" alt="Arduino Mega 2560" class="component-img">
                 <h3>Arduino Mega 2560</h3>
-                <p>Microcontrolador principal encargado del procesamiento numérico de la cinemática inversa, generación de pulsos y lectura de entradas digitales[cite: 1, 3].</p>
+                <p>Unidad central de procesamiento encargada del cálculo cinemático, la generación de señales de tiempo y la gestión de periféricos de entrada y salida.</p>
             </div>
 
             <div class="component-card">
                 <img src="img/17HS4401.jpg" alt="Motor Paso a Paso NEMA 17" class="component-img">
                 <h3>2x Motores NEMA 17 (17HS4401S)</h3>
-                <p>Actuadores paso a paso bipolares que proporcionan el torque e inercia necesarios para el posicionamiento de los ejes de rotación[cite: 1, 3].</p>
+                <p>Actuadores bipolares responsables de la rotación azimutal ($\theta_1$) y la elevación polar ($\theta_2$), aportando la fuerza necesaria para vencer la inercia de la estructura.</p>
             </div>
 
             <div class="component-card">
                 <img src="img/tb6600.jpg" alt="Driver TB6600" class="component-img">
                 <h3>2x Drivers TB6600</h3>
-                <p>Módulos de potencia ajustables con control de micropasos y aislamiento por optoacopladores para alimentar los motores NEMA 17[cite: 1, 3].</p>
+                <p>Etapas de potencia con regulación de corriente constante y aislamiento óptico, optimizadas para un manejo eficiente de micropasos.</p>
             </div>
 
             <div class="component-card">
                 <img src="img/28byj.jpg" alt="Motor 28BYJ-48" class="component-img">
                 <h3>Motor 28BYJ-48</h3>
-                <p>Actuador unipolar compacto utilizado para la tracción y control de extensión de la cremallera del brazo[cite: 1, 3].</p>
+                <p>Actuador de precisión para la transmisión lineal de la cremallera ($e$), responsable del desplazamiento prismático del efector final.</p>
             </div>
 
             <div class="component-card">
-                <img src="img/uln2003.jpg" alt="Driver ULN2003" class="component-img">
+                <img src="img/uln2003.jpg" alt="Driver ULN2003APG" class="component-img">
                 <h3>Driver ULN2003APG</h3>
-                <p>Módulo con arreglo de transistores Darlington encargado de la conmutación de corriente para las bobinas del motor 28BYJ-48.</p>
+                <p>Controlador con arreglo de transistores Darlington enfocado en la conmutación de fases para el motor unipolar de la cremallera.</p>
             </div>
 
             <div class="component-card">
                 <img src="img/fuente.jpg" alt="Fuente Conmutada 12V 10A" class="component-img">
                 <h3>Fuente Conmutada 12V 10A</h3>
-                <p>Unidad de alimentación regulada de alta capacidad que entrega energía constante a las etapas de potencia sin caídas de tensión.</p>
+                <p>Suministro de energía regulada de alto rendimiento que previene caídas de voltaje ante demandas pico de torque simultáneas.</p>
             </div>
 
             <div class="component-card">
                 <h3>Pulsadores de Control Físico</h3>
-                <p>Entradas digitales dedicadas: un botón para iniciar la secuencia de movimiento y otro para el habilitador/liberación manual de motores[cite: 3].</p>
+                <p>Interrupción y ejecución manual: un pulsador inicia la trayectoria cinemática programada y el segundo alterna la liberación electromagnética de las bobinas de los motores.</p>
             </div>
 
             <div class="component-card full-width">
                 <h3>Indicadores LED de Estado</h3>
-                <p>Sistema visual de retroalimentación en tiempo real sobre la condición operacional del robot[cite: 3]:</p>
+                <p>Interfaz óptica de diagnóstico operacional instantáneo:</p>
                 <ul class="led-list">
-                    <li><span class="led-badge status-green"></span> <strong>Verde:</strong> Sistema en ejecución (motores en movimiento)[cite: 3].</li>
-                    <li><span class="led-badge status-orange"></span> <strong>Naranja:</strong> Sistema en estado de pausa o liberación manual[cite: 3].</li>
-                    <li><span class="led-badge status-red"></span> <strong>Rojo:</strong> Bloqueo de seguridad activado por riesgo de colisión[cite: 3].</li>
+                    <li><span class="led-badge status-green"></span> <strong>Verde:</strong> Sistema en ejecución activa y secuencias de movimiento en curso.</li>
+                    <li><span class="led-badge status-orange"></span> <strong>Naranja:</strong> Modo de pausa o motores desenergizados manualmente para ajuste libre.</li>
+                    <li><span class="led-badge status-red"></span> <strong>Rojo:</strong> Interrupción de seguridad por trayectoria fuera de rango o peligro de colisión.</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Especificaciones Técnicas -->
+    <section id="especificaciones">
+        <h2>Especificaciones Técnicas</h2>
+        <p>
+            Parámetros clave del desempeño estructural, eléctrico y de procesamiento del manipulador:
+        </p>
+        <div class="specs-grid">
+            <div class="spec-card">
+                <h3>Arquitectura Cinemática</h3>
+                <p>Configuración Esférica 3 DOF (Rotacional - Rotacional - Prismática)</p>
+            </div>
+            <div class="spec-card">
+                <h3>Capacidad de Procesamiento</h3>
+                <p>Cálculo trigonométrico e interpolación lineal a 16 MHz en Arduino Mega</p>
+            </div>
+            <div class="spec-card">
+                <h3>Unidad de Potencia</h3>
+                <p>Alimentación principal a 12V DC con capacidad de entrega de 10 Amperios</p>
+            </div>
+            <div class="spec-card">
+                <h3>Límites Operativos</h3>
+                <p>Protección automática en elevación $\theta_2$ y carrera máxima de extensión lineal $e$</p>
+            </div>
+            <div class="spec-card">
+                <h3>Control de Actuación</h3>
+                <p>Control por pulsos y dirección (PUL/DIR) con aceleración progresiva implementada</p>
+            </div>
+            <div class="spec-card">
+                <h3>Interfaz de Usuario</h3>
+                <p>Monitoreo mediante puerto serie, pulsadores físicos e indicadores LED de 3 estados</p>
             </div>
         </div>
     </section>
@@ -144,23 +151,12 @@
 
     <!-- Funcionamiento -->
     <section id="funcionamiento">
-        <h2>Funcionamiento</h2>
+        <h2>Funcionamiento y Demostración</h2>
         <p>
-            El usuario introduce las coordenadas deseadas a través de la interfaz o puerto serie, y el sistema
-            calcula cinemáticamente el número de pasos requerido para cada motor[cite: 1, 3].
+            El flujo de trabajo inicia cuando el microcontrolador evalúa las coordenadas de destino $(X, Y, Z)$. A través de las funciones trigonométricas en C++, determina los ángulos exactos $\theta_1$, $\theta_2$ y la extensión requerida $e$.
         </p>
         <p>
-            Durante la ejecución, la señal de pulsos activa los drivers y el encoder AS5600 permite retroalimentar
-            la posición real para evitar desviaciones o pérdida de pasos[cite: 1, 3].
-        </p>
-    </section>
-
-
-    <!-- Demostración -->
-    <section id="demostracion">
-        <h2>Demostración y Multimedia</h2>
-        <p>
-            A continuación se presenta una vista previa en video del entorno de pruebas y respuesta de movimiento:
+            Antes de activar los motores, el algoritmo valida que las coordenadas no violen los límites de colisión físicos. Si la trayectoria es segura, el LED verde se enciende y los motores ejecutan la secuencia de movimiento paso a paso.
         </p>
         
         <div class="video-container-local">
@@ -169,17 +165,7 @@
                 Tu navegador no soporta la reproducción de video HTML5.
             </video>
         </div>
-        <p class="video-note"><em>* Video de demostración temporal. Próximamente se actualizará con la prueba final del robot físico.</em></p>
-    </section>
-
-
-    <!-- Diseño mecánico -->
-    <section id="diseno">
-        <h2>Diseño Mecánico</h2>
-        <p>
-            El brazo robótico fue diseñado mediante modelado CAD 3D (SolidWorks)[cite: 1]. Esta sección incluirá los esquemas de transmisión,
-            soportes estructurales, planos de ensamble y dimensiones del mecanismo esférico[cite: 1].
-        </p>
+        <p class="video-note"><em>* Video de demostración temporal del entorno de pruebas. Próximamente se actualizará con la prueba del mecanismo final.</em></p>
     </section>
 
 
@@ -187,7 +173,7 @@
     <section id="programacion">
         <h2>Programación y Control</h2>
         <p>
-            El firmware en C++ calcula la cinemática inversa a partir de las coordenadas cartesianas de entrada (X, Y, Z) para determinar los ángulos articulados (th1, th2) y la extensión de la cremallera (e)[cite: 3]. Incluye algoritmos de protección anti-colisión en tiempo real, habilitador manual y aceleración gradual para los motores paso a paso[cite: 3].
+            El firmware en C++ calcula la cinemática inversa a partir de las coordenadas cartesianas de entrada (X, Y, Z) para determinar los ángulos articulados (th1, th2) y la extensión de la cremallera (e). Incluye algoritmos de protección anti-colisión en tiempo real, habilitador manual y aceleración gradual para los motores paso a paso.
         </p>
 
         <div class="code-header">
@@ -413,6 +399,16 @@ void antihorario (){
         </div>
     </section>
 
+
+    <!-- Diseño mecánico -->
+    <section id="diseno">
+        <h2>Diseño Mecánico</h2>
+        <p>
+            El brazo robótico fue diseñado mediante modelado CAD 3D (SolidWorks). Esta sección incluirá los esquemas de transmisión, soportes estructurales, planos de ensamble y dimensiones del mecanismo esférico.
+        </p>
+    </section>
+
+
     <!-- Script de copiado al portapapeles -->
     <script>
         function copiarCodigo() {
@@ -437,9 +433,6 @@ void antihorario (){
         </p>
     </footer>
 
-</body>
-
-</html>
 </body>
 
 </html>
