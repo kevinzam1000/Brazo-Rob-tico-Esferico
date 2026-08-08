@@ -25,14 +25,14 @@
                 <a href="#componentes">Componentes</a>
                 <a href="#especificaciones">Especificaciones</a>
                 <a href="#funcionamiento">Funcionamiento</a>
-                <a href="#programacion">Programación</a>
                 <a href="#diseno">Diseño</a>
+                <a href="#programacion">Programación</a>
             </div>
         </div>
     </nav>
 
 
-    <!-- Inicio -->
+    <!-- 1. Inicio -->
     <header id="inicio">
         <h1>Brazo Robótico Esférico</h1>
         <p>Proyecto Integrador de Mecatrónica</p>
@@ -40,19 +40,19 @@
     </header>
 
 
-    <!-- Descripción -->
+    <!-- 2. Descripción -->
     <section id="descripcion">
         <h2>Descripción del Proyecto</h2>
         <p>
             Este proyecto aborda la concepción, modelado matemático y fabricación de un <strong>brazo robótico de articulación esférica (R-R-P)</strong>, diseñado para ejecutar tareas de posicionamiento tridimensional con alta precisión.
         </p>
         <p>
-            Mediante la combinación de cinemática inversa calculada en tiempo real, actuadores de paso a paso de alto torque y un algoritmo preventivo de protección anti-colisión, la plataforma transforma coordenadas cartesianas arbitrarias $(X, Y, Z)$ en movimientos articulados fluidos y coordinados, respaldados por una interfaz física de control e indicadores visuales de estado.
+            Mediante la combinación de cinemática inversa calculada en tiempo real, actuadores paso a paso de alto torque y un algoritmo preventivo de protección anti-colisión, la plataforma transforma coordenadas cartesianas arbitrarias (X, Y, Z) en movimientos articulados fluidos y coordinados, respaldados por una interfaz física de control e indicadores visuales de estado.
         </p>
     </section>
 
 
-    <!-- Componentes -->
+    <!-- 3. Componentes -->
     <section id="componentes">
         <h2>Componentes Electrónicos y Hardware</h2>
         <p>
@@ -69,7 +69,7 @@
             <div class="component-card">
                 <img src="img/17HS4401.jpg" alt="Motor Paso a Paso NEMA 17" class="component-img">
                 <h3>2x Motores NEMA 17 (17HS4401S)</h3>
-                <p>Actuadores bipolares responsables de la rotación azimutal ($\theta_1$) y la elevación polar ($\theta_2$), aportando la fuerza necesaria para vencer la inercia de la estructura.</p>
+                <p>Actuadores bipolares responsables de la rotación azimutal (θ1) y la elevación polar (θ2), aportando la fuerza necesaria para vencer la inercia de la estructura.</p>
             </div>
 
             <div class="component-card">
@@ -81,7 +81,7 @@
             <div class="component-card">
                 <img src="img/28byj.jpg" alt="Motor 28BYJ-48" class="component-img">
                 <h3>Motor 28BYJ-48</h3>
-                <p>Actuador de precisión para la transmisión lineal de la cremallera ($e$), responsable del desplazamiento prismático del efector final.</p>
+                <p>Actuador de precisión para la transmisión lineal de la cremallera (e), responsable del desplazamiento prismático del efector final.</p>
             </div>
 
             <div class="component-card">
@@ -114,7 +114,7 @@
     </section>
 
 
-    <!-- Especificaciones Técnicas -->
+    <!-- 4. Especificaciones Técnicas -->
     <section id="especificaciones">
         <h2>Especificaciones Técnicas</h2>
         <p>
@@ -135,7 +135,7 @@
             </div>
             <div class="spec-card">
                 <h3>Límites Operativos</h3>
-                <p>Protección automática en elevación $\theta_2$ y carrera máxima de extensión lineal $e$</p>
+                <p>Protección automática en elevación θ2 y carrera máxima de extensión lineal e</p>
             </div>
             <div class="spec-card">
                 <h3>Control de Actuación</h3>
@@ -149,11 +149,11 @@
     </section>
 
 
-    <!-- Funcionamiento -->
+    <!-- 5. Funcionamiento -->
     <section id="funcionamiento">
         <h2>Funcionamiento y Demostración</h2>
         <p>
-            El flujo de trabajo inicia cuando el microcontrolador evalúa las coordenadas de destino $(X, Y, Z)$. A través de las funciones trigonométricas en C++, determina los ángulos exactos $\theta_1$, $\theta_2$ y la extensión requerida $e$.
+            El flujo de trabajo inicia cuando el microcontrolador evalúa las coordenadas de destino (X, Y, Z). A través de las funciones trigonométricas en C++, determina los ángulos exactos θ1, θ2 y la extensión requerida e.
         </p>
         <p>
             Antes de activar los motores, el algoritmo valida que las coordenadas no violen los límites de colisión físicos. Si la trayectoria es segura, el LED verde se enciende y los motores ejecutan la secuencia de movimiento paso a paso.
@@ -169,7 +169,16 @@
     </section>
 
 
-    <!-- Programación -->
+    <!-- 6. Diseño mecánico -->
+    <section id="diseno">
+        <h2>Diseño Mecánico</h2>
+        <p>
+            El brazo robótico fue diseñado mediante modelado CAD 3D (SolidWorks). Esta sección incluirá los esquemas de transmisión, soportes estructurales, planos de ensamble y dimensiones del mecanismo esférico.
+        </p>
+    </section>
+
+
+    <!-- 7. Programación -->
     <section id="programacion">
         <h2>Programación y Control</h2>
         <p>
@@ -397,15 +406,6 @@ void antihorario (){
                 Ver repositorio completo en GitHub
             </a>
         </div>
-    </section>
-
-
-    <!-- Diseño mecánico -->
-    <section id="diseno">
-        <h2>Diseño Mecánico</h2>
-        <p>
-            El brazo robótico fue diseñado mediante modelado CAD 3D (SolidWorks). Esta sección incluirá los esquemas de transmisión, soportes estructurales, planos de ensamble y dimensiones del mecanismo esférico.
-        </p>
     </section>
 
 
