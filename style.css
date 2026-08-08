@@ -10,6 +10,7 @@ body {
     color: #222;
 }
 
+
 /* ================================ */
 /*       BARRA DE NAVEGACIÓN        */
 /* ================================ */
@@ -18,37 +19,49 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+
     background-color: #111827;
+
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
     max-width: 1200px;
     margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 15px 20px;
 }
 
 .logo {
     color: white;
+
     font-weight: bold;
     font-size: 18px;
+
     white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
+
     gap: 20px;
+
     flex-wrap: wrap;
+
     justify-content: flex-end;
 }
 
 .nav-links a {
     color: white;
+
     text-decoration: none;
+
     font-size: 14px;
+
     transition: 0.2s;
 }
 
@@ -56,37 +69,55 @@ body {
     color: #3b82f6;
 }
 
+
 /* ================================ */
 /*            INICIO                */
 /* ================================ */
 
 header {
     background-color: #1f2937;
+
     color: white;
+
     text-align: center;
+
     padding: 50px 20px;
 }
 
 header h1 {
     margin: 0;
+
     font-size: 42px;
 }
 
 header p {
     font-size: 19px;
+
     margin-top: 10px;
+
     color: #9ca3af;
 }
 
+
+/* ================================ */
+/*          IMAGEN PRINCIPAL        */
+/* ================================ */
+
 header img {
     display: block;
+
     width: 100%;
     max-width: 700px;
+
     height: auto;
+
     margin: 30px auto 0;
+
     border-radius: 12px;
+
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
+
 
 /* ================================ */
 /*            SECCIONES             */
@@ -95,18 +126,27 @@ header img {
 section {
     width: 90%;
     max-width: 900px;
+
     margin: 30px auto;
+
     background-color: white;
+
     padding: 30px;
+
     border-radius: 12px;
+
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
     scroll-margin-top: 80px;
 }
 
 h2 {
     color: #1f2937;
+
     border-bottom: 2px solid #e5e7eb;
+
     padding-bottom: 8px;
+
     margin-top: 0;
 }
 
@@ -114,8 +154,13 @@ p {
     line-height: 1.6;
 }
 
+ul {
+    line-height: 1.8;
+}
+
+
 /* ================================ */
-/*       TARJETAS Y MÚLTIPLES GRID   */
+/*   TARJETAS: SPECS Y COMPONENTES  */
 /* ================================ */
 
 .specs-grid, .components-grid {
@@ -135,7 +180,7 @@ p {
 
 .spec-card h3, .component-card h3 {
     margin: 0 0 8px 0;
-    font-size: 16px;
+    font-size: 15px;
     color: #1f2937;
 }
 
@@ -145,27 +190,34 @@ p {
     color: #4b5563;
 }
 
+
 /* ================================ */
-/*           MULTIMEDIA             */
+/*       VIDEO LOCAL RESPONSIVO      */
 /* ================================ */
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-    height: 0;
+.video-container-local {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto 0;
     overflow: hidden;
-    border-radius: 8px;
-    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     background-color: #000;
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+.video-container-local video {
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
 }
+
+.video-note {
+    font-size: 13px;
+    color: #6b7280;
+    text-align: center;
+    margin-top: 10px;
+}
+
 
 /* ================================ */
 /*        BLOQUE DE CÓDIGO          */
@@ -179,11 +231,13 @@ p {
     overflow-x: auto;
     font-family: "Consolas", "Courier New", monospace;
     font-size: 14px;
+    margin-top: 15px;
 }
 
 .code-block code {
     white-space: pre;
 }
+
 
 /* ================================ */
 /*             FOOTER               */
@@ -191,18 +245,24 @@ p {
 
 footer {
     text-align: center;
+
     padding: 30px;
+
     color: #666;
 }
+
 
 /* ================================ */
 /*          DISEÑO CELULAR          */
 /* ================================ */
 
 @media (max-width: 800px) {
+
     .nav-container {
         flex-direction: column;
+
         gap: 12px;
+
         padding: 15px 10px;
     }
 
@@ -212,9 +272,16 @@ footer {
 
     .nav-links {
         width: 100%;
+
         justify-content: center;
+
         gap: 10px 16px;
     }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
 
     header {
         padding: 35px 15px;
@@ -224,13 +291,54 @@ footer {
         font-size: 32px;
     }
 
+    header p {
+        font-size: 17px;
+    }
+
+
+    header img {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 20px;
+
+        border-radius: 8px;
+    }
+
+
     section {
         width: 94%;
+
         margin: 20px auto;
+
         padding: 20px;
+
+        border-radius: 10px;
     }
-}
+
+
+    h2 {
+        font-size: 22px;
+    }
+
+
+    p {
+        font-size: 16px;
+
+        line-height: 1.6;
+    }
+
+
+    ul {
+        padding-left: 25px;
+    }
+
+
+    footer {
         padding: 20px 10px;
+
         font-size: 14px;
     }
+
 }
