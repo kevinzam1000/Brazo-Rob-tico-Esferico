@@ -312,3 +312,68 @@ footer {
     color: #94a3b8;
     font-size: 0.85rem;
 }
+
+/* =========================================
+   ESTILOS PARA MENÚ MÓVIL (RESPONSIVE)
+========================================= */
+
+/* Estilos base del botón hamburguesa (Oculto en PC) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001; /* Para que quede por encima del menú desplegable */
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #38bdf8;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Media Query para pantallas pequeñas (móviles y tablets) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* El menú pasa a ser una columna oculta arriba de la pantalla */
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Inicia justo debajo de la barra oscura */
+        left: 0;
+        width: 100%;
+        background-color: #0f172a;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        gap: 1.5rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+        
+        /* Animación para ocultarlo */
+        transform: translateY(-200%);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        z-index: -1;
+    }
+
+    /* Clase que se activa con Javascript para mostrar el menú */
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* Animación del botón hamburguesa para convertirse en una "X" */
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
