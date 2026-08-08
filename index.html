@@ -4,173 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Brazo Robótico | Proyecto de Mecatrónica</title>
-
+    <title>Brazo Robótico Esférico | Proyecto de Mecatrónica</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- Barra de navegación -->
-
     <nav class="navbar">
-
         <div class="nav-container">
-
-            <div class="logo">
-                BRAZO ROBÓTICO
-            </div>
-
+            <div class="logo">BRAZO ROBÓTICO ESFÉRICO</div>
             <div class="nav-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#descripcion">Descripción</a>
+                <a href="#especificaciones">Especificaciones</a>
                 <a href="#componentes">Componentes</a>
                 <a href="#funcionamiento">Funcionamiento</a>
                 <a href="#demostracion">Demostración</a>
                 <a href="#diseno">Diseño</a>
                 <a href="#programacion">Programación</a>
             </div>
-
         </div>
-
     </nav>
 
-
     <!-- Inicio -->
-
     <header id="inicio">
-
-        <h1>Brazo Robótico</h1>
-
-        <p>Proyecto de Mecatrónica</p>
-
-        <img src="Brazo_Robotico.jpg" alt="Brazo Robótico">
-
+        <h1>Brazo Robótico Esférico</h1>
+        <p>Proyecto Integrador de Mecatrónica</p>
+        <img src="Brazo_Robotico.jpg" alt="Brazo Robótico Esférico">
     </header>
 
-
     <!-- Descripción -->
-
     <section id="descripcion">
-
-        <h2>Descripción</h2>
-
+        <h2>Descripción del Proyecto</h2>
         <p>
-            Este proyecto consiste en el diseño y construcción de un brazo
-            robótico controlado mediante Arduino.
+            Este proyecto consiste en el diseño, análisis cinemático y construcción de un brazo
+            robótico esférico de bucle cerrado controlado mediante microcontrolador.
         </p>
-
         <p>
-            El sistema permite controlar la posición del brazo mediante
-            coordenadas, utilizando motores paso a paso y diferentes
-            sistemas de transmisión.
+            El sistema permite calcular y ejecutar trayectorias exactas combinando motores paso a paso,
+            redes de transmisión cinemática y encoders magnéticos para retroalimentación en tiempo real.
         </p>
-
     </section>
 
+    <!-- Especificaciones Técnicas -->
+    <section id="especificaciones">
+        <h2>Especificaciones Técnicas</h2>
+        <div class="specs-grid">
+            <div class="spec-card">
+                <h3>Configuración</h3>
+                <p>Robótica Esférica (R-R-P)</p>
+            </div>
+            <div class="spec-card">
+                <h3>Controlador</h3>
+                <p>Arduino Mega 2560</p>
+            </div>
+            <div class="spec-card">
+                <h3>Actuadores Principal</h3>
+                <p>NEMA 17 + Driver TB6600</p>
+            </div>
+            <div class="spec-card">
+                <h3>Sensórica</h3>
+                <p>Encoder Magnético AS5600</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Componentes -->
-
     <section id="componentes">
-
-        <h2>Componentes</h2>
-
-        <ul>
-            <li>Arduino Mega</li>
-            <li>Motores NEMA 17</li>
-            <li>Motor 28BYJ-48</li>
-            <li>Drivers para motores</li>
-            <li>Sensor AS5600</li>
-        </ul>
-
+        <h2>Componentes Principales</h2>
+        <div class="components-grid">
+            <div class="component-card">
+                <h3>Arduino Mega</h3>
+                <p>Tarjeta de procesamiento central encarga del cálculo de trayectorias y generación de pulsos de paso.</p>
+            </div>
+            <div class="component-card">
+                <h3>Motores NEMA 17 & Drivers TB6600</h3>
+                <p>Proporcionan el par de torsión necesario para el posicionamiento articular con alta resolución.</p>
+            </div>
+            <div class="component-card">
+                <h3>Sensor Magnético AS5600</h3>
+                <p>Encoder absoluto I2C de 12 bits para medir la posición angular del eje articular en bucle cerrado.</p>
+            </div>
+            <div class="component-card">
+                <h3>Motor 28BYJ-48</h3>
+                <p>Actuador auxiliar para mecanismos de sujeción o grados de libertad secundarios.</p>
+            </div>
+        </div>
     </section>
-
 
     <!-- Funcionamiento -->
-
     <section id="funcionamiento">
-
         <h2>Funcionamiento</h2>
-
         <p>
-            El usuario introduce las coordenadas deseadas y el sistema
-            calcula los movimientos necesarios para posicionar el brazo.
+            El usuario introduce las coordenadas cartesianas o angulares deseadas. El controlador ejecuta el modelo cinemático para traducir la posición en cantidad de pasos del motor.
         </p>
-
         <p>
-            El controlador genera las señales correspondientes para los
-            motores paso a paso.
+            Mediante la lectura constante del encoder AS5600, el sistema verifica que no existan pérdidas de pasos y corrige desviaciones en tiempo real.
         </p>
-
     </section>
-
 
     <!-- Demostración -->
-
     <section id="demostracion">
-
-        <h2>Demostración</h2>
-
-        <p>
-            En esta sección se mostrará una demostración del funcionamiento
-            del brazo robótico.
-        </p>
-
-        <p>
-            Video de demostración próximamente.
-        </p>
-
+        <h2>Demostración y Multimedia</h2>
+        <p>En el siguiente contenedor puedes visualizar el funcionamiento del sistema en movimiento:</p>
+        
+        <div class="video-container">
+            <!-- Reemplaza "VIDEO_ID" por el ID de tu video de YouTube cuando lo subas -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Demostración Brazo Robótico" frameborder="0" allowfullscreen></iframe>
+        </div>
     </section>
 
-
-    <!-- Diseño -->
-
+    <!-- Diseño mecánico -->
     <section id="diseno">
-
-        <h2>Diseño mecánico</h2>
-
+        <h2>Diseño Mecánico y Estructural</h2>
         <p>
-            El brazo fue diseñado utilizando herramientas de modelado CAD.
-            En esta sección se incluirán los planos, dimensiones y
-            características mecánicas del robot.
+            El ensamble tridimensional y el análisis de interferencias fueron desarrollados en CAD (SolidWorks). Se diseñaron soportes específicos para correas de transmisión y perfiles estructurados.
         </p>
-
     </section>
-
 
     <!-- Programación -->
-
     <section id="programacion">
+        <h2>Programación y Control</h2>
+        <p>A continuación se muestra un extracto base de la lógica de control desarrollada en C++ / Arduino:</p>
 
-        <h2>Programación</h2>
+        <div class="code-block">
+<pre><code>// Ejemplo base de lectura de encoder e impulsos a driver
+#include &lt;Wire.h&gt;
 
-        <p>
-            El control del brazo se realiza mediante Arduino. El programa
-            recibe las coordenadas deseadas y las convierte en movimientos
-            para los diferentes motores.
-        </p>
+const int stepPin = 3;
+const int dirPin = 4;
+const int enablePin = 5;
 
-        <p>
-            En esta sección se incluirá el código utilizado para controlar
-            el robot.
-        </p>
+void setup() {
+  pinMode(stepPin, OUTPUT);
+  pinMode(dirPin, OUTPUT);
+  pinMode(enablePin, OUTPUT);
+  digitalWrite(enablePin, LOW); // Habilita driver
+}
 
+void loop() {
+  // Lógica de control cinemático y movimiento
+}</code></pre>
+        </div>
     </section>
 
-
     <!-- Pie de página -->
-
     <footer>
-
-        <p>
-            Proyecto de Brazo Robótico · Mecatrónica
-        </p>
-
+        <p>Proyecto de Brazo Robótico Esférico · Mecatrónica</p>
     </footer>
 
 </body>
-
 </html>
 
 </body>
