@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Brazo Robótico Esférico | Proyecto de Mecatrónica</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,7 +15,10 @@
     <!-- Barra de navegación -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">BRAZO ROBÓTICO ESFÉRICO</div>
+            <div class="logo">
+                BRAZO ROBÓTICO ESFÉRICO
+            </div>
+
             <div class="nav-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#descripcion">Descripción</a>
@@ -27,6 +32,7 @@
         </div>
     </nav>
 
+
     <!-- Inicio -->
     <header id="inicio">
         <h1>Brazo Robótico Esférico</h1>
@@ -34,41 +40,44 @@
         <img src="Brazo_Robotico.jpg" alt="Brazo Robótico Esférico">
     </header>
 
+
     <!-- Descripción -->
     <section id="descripcion">
         <h2>Descripción del Proyecto</h2>
         <p>
             Este proyecto consiste en el diseño, análisis cinemático y construcción de un brazo
-            robótico esférico de bucle cerrado controlado mediante microcontrolador.
+            robótico de configuración esférica controlado mediante un microcontrolador Arduino.
         </p>
         <p>
-            El sistema permite calcular y ejecutar trayectorias exactas combinando motores paso a paso,
-            redes de transmisión cinemática y encoders magnéticos para retroalimentación en tiempo real.
+            El sistema permite calcular y ejecutar trayectorias exactas para posicionar el brazo en coordenadas específicas,
+            utilizando motores paso a paso, sistemas de transmisión por correa y retroalimentación de posición mediante un encoder magnético absoluto.
         </p>
     </section>
+
 
     <!-- Especificaciones Técnicas -->
     <section id="especificaciones">
         <h2>Especificaciones Técnicas</h2>
         <div class="specs-grid">
             <div class="spec-card">
-                <h3>Configuración</h3>
-                <p>Robótica Esférica (R-R-P)</p>
+                <h3>Geometría</h3>
+                <p>Configuración Esférica (R-R-P)</p>
             </div>
             <div class="spec-card">
-                <h3>Controlador</h3>
+                <h3>Controlador Central</h3>
                 <p>Arduino Mega 2560</p>
             </div>
             <div class="spec-card">
-                <h3>Actuadores Principal</h3>
-                <p>NEMA 17 + Driver TB6600</p>
+                <h3>Actuación Principal</h3>
+                <p>Motores NEMA 17 + Driver TB6600</p>
             </div>
             <div class="spec-card">
-                <h3>Sensórica</h3>
-                <p>Encoder Magnético AS5600</p>
+                <h3>Sensor de Posición</h3>
+                <p>Encoder Magnético Absoluto AS5600</p>
             </div>
         </div>
     </section>
+
 
     <!-- Componentes -->
     <section id="componentes">
@@ -76,39 +85,43 @@
         <div class="components-grid">
             <div class="component-card">
                 <h3>Arduino Mega</h3>
-                <p>Tarjeta de procesamiento central encarga del cálculo de trayectorias y generación de pulsos de paso.</p>
+                <p>Microcontrolador encargado del procesamiento numérico de coordenadas y generación de pulsos para los drivers.</p>
             </div>
             <div class="component-card">
-                <h3>Motores NEMA 17 & Drivers TB6600</h3>
-                <p>Proporcionan el par de torsión necesario para el posicionamiento articular con alta resolución.</p>
+                <h3>Motores NEMA 17 & Driver TB6600</h3>
+                <p>Proporcionan el torque adecuado para el movimiento articular y el control de fuerza en los ejes.</p>
             </div>
             <div class="component-card">
                 <h3>Sensor Magnético AS5600</h3>
-                <p>Encoder absoluto I2C de 12 bits para medir la posición angular del eje articular en bucle cerrado.</p>
+                <p>Encoder absoluto I2C de 12 bits para lectura angular precisa y verificación de posición del eje.</p>
             </div>
             <div class="component-card">
                 <h3>Motor 28BYJ-48</h3>
-                <p>Actuador auxiliar para mecanismos de sujeción o grados de libertad secundarios.</p>
+                <p>Actuador auxiliar compacto utilizado para mecanismos secundarios o efector final.</p>
             </div>
         </div>
     </section>
+
 
     <!-- Funcionamiento -->
     <section id="funcionamiento">
         <h2>Funcionamiento</h2>
         <p>
-            El usuario introduce las coordenadas cartesianas o angulares deseadas. El controlador ejecuta el modelo cinemático para traducir la posición en cantidad de pasos del motor.
+            El usuario introduce las coordenadas deseadas a través de la interfaz o puerto serie, y el sistema
+            calcula cinemáticamente el número de pasos requerido para cada motor.
         </p>
         <p>
-            Mediante la lectura constante del encoder AS5600, el sistema verifica que no existan pérdidas de pasos y corrige desviaciones en tiempo real.
+            Durante la ejecución, la señal de pulsos activa los drivers y el encoder AS5600 permite retroalimentar
+            la posición real para evitar desviaciones o pérdida de pasos.
         </p>
     </section>
+
 
     <!-- Demostración -->
     <section id="demostracion">
         <h2>Demostración y Multimedia</h2>
         <p>
-            A continuación se muestra el entorno de prueba y control de movimiento del brazo robótico esférico:
+            A continuación se presenta una vista previa en video del entorno de pruebas y respuesta de movimiento:
         </p>
         
         <div class="video-container-local">
@@ -117,24 +130,30 @@
                 Tu navegador no soporta la reproducción de video HTML5.
             </video>
         </div>
-        <p class="video-note"><em>* Video de prueba temporal. Próximamente se actualizará con la demostración final del sistema.</em></p>
+        <p class="video-note"><em>* Video de demostración temporal. Próximamente se actualizará con la prueba final del robot físico.</em></p>
     </section>
+
 
     <!-- Diseño mecánico -->
     <section id="diseno">
-        <h2>Diseño Mecánico y Estructural</h2>
+        <h2>Diseño Mecánico</h2>
         <p>
-            El ensamble tridimensional y el análisis de interferencias fueron desarrollados en CAD (SolidWorks). Se diseñaron soportes específicos para correas de transmisión y perfiles estructurados.
+            El brazo robótico fue diseñado mediante modelado CAD 3D (SolidWorks). Esta sección incluirá los esquemas de transmisión,
+            soportes estructurales, planos de ensamble y dimensiones del mecanismo esférico.
         </p>
     </section>
+
 
     <!-- Programación -->
     <section id="programacion">
         <h2>Programación y Control</h2>
-        <p>A continuación se muestra un extracto base de la lógica de control desarrollada en C++ / Arduino:</p>
+        <p>
+            El firmware está desarrollado en C++ para la plataforma Arduino. Recibe los parámetros de entrada y los traduce
+            en señales de paso y dirección (`STEP` / `DIR`).
+        </p>
 
         <div class="code-block">
-<pre><code>// Ejemplo base de lectura de encoder e impulsos a driver
+<pre><code>// Estructura base de control para drivers paso a paso
 #include &lt;Wire.h&gt;
 
 const int stepPin = 3;
@@ -145,22 +164,22 @@ void setup() {
   pinMode(stepPin, OUTPUT);
   pinMode(dirPin, OUTPUT);
   pinMode(enablePin, OUTPUT);
-  digitalWrite(enablePin, LOW); // Habilita driver
+  digitalWrite(enablePin, LOW); // Habilita driver TB6600
 }
 
 void loop() {
-  // Lógica de control cinemático y movimiento
+  // Lógica de cálculo de coordenadas y lectura del encoder AS5600
 }</code></pre>
         </div>
     </section>
 
+
     <!-- Pie de página -->
     <footer>
-        <p>Proyecto de Brazo Robótico Esférico · Mecatrónica</p>
+        <p>
+            Proyecto de Brazo Robótico Esférico · Mecatrónica
+        </p>
     </footer>
-
-</body>
-</html>
 
 </body>
 
