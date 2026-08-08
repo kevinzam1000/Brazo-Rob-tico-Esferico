@@ -46,3 +46,9 @@ footer {
     padding: 25px;
     color: #666;
 }
+header img {
+    width: 80%;
+    max-width: 700px;
+    margin-top: 25px;
+    border-radius: 12px;
+}
