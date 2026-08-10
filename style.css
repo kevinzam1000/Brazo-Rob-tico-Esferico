@@ -127,28 +127,106 @@ section p {
 .component-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 1.25rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .component-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .component-card.full-width {
     grid-column: 1 / -1;
 }
 
+/* =========================================
+   CONTENEDOR DE IMAGEN Y GLASSMORPHISM OVERLAY
+========================================= */
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background-color: #f1f5f9;
+    cursor: pointer;
+    outline: none;
+}
+
 .component-img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: contain;
-    background-color: #f8fafc;
-    border-radius: 6px;
-    margin-bottom: 1rem;
+    padding: 0.5rem;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Capa semitransparente con efecto despulido (Glassmorphism) */
+.glass-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    transform: translateY(101%);
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.glass-overlay h4 {
+    font-size: 1.05rem;
+    color: #38bdf8;
+    margin-bottom: 0.4rem;
+}
+
+.overlay-func {
+    font-size: 0.82rem;
+    color: #e2e8f0;
+    margin-bottom: 0.6rem !important;
+    line-height: 1.3;
+}
+
+.overlay-badge {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.2);
+    border: 1px solid #38bdf8;
+    color: #7dd3fc;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Efectos al pasar el cursor o tocar (hover / focus / active) */
+.card-image-wrapper:hover .component-img,
+.card-image-wrapper:focus .component-img,
+.card-image-wrapper:active .component-img {
+    transform: scale(1.08);
+}
+
+.card-image-wrapper:hover .glass-overlay,
+.card-image-wrapper:focus .glass-overlay,
+.card-image-wrapper:active .glass-overlay {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .component-card h3 {
@@ -317,13 +395,12 @@ footer {
    ESTILOS PARA MENÚ MÓVIL (RESPONSIVE)
 ========================================= */
 
-/* Estilos base del botón hamburguesa (Oculto en PC) */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    z-index: 1001; /* Para que quede por encima del menú desplegable */
+    z-index: 1001;
 }
 
 .menu-toggle .bar {
@@ -334,16 +411,14 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 
-/* Media Query para pantallas pequeñas (móviles y tablets) */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
     }
 
-    /* El menú pasa a ser una columna oculta arriba de la pantalla */
     .nav-links {
         position: absolute;
-        top: 100%; /* Inicia justo debajo de la barra oscura */
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: #0f172a;
@@ -352,21 +427,17 @@ footer {
         padding: 1.5rem 0;
         gap: 1.5rem;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
-        
-        /* Animación para ocultarlo */
         transform: translateY(-200%);
         opacity: 0;
         transition: all 0.3s ease-in-out;
         z-index: -1;
     }
 
-    /* Clase que se activa con Javascript para mostrar el menú */
     .nav-links.active {
         transform: translateY(0);
         opacity: 1;
     }
 
-    /* Animación del botón hamburguesa para convertirse en una "X" */
     .menu-toggle.is-active .bar:nth-child(2) {
         opacity: 0;
     }
