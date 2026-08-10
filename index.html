@@ -67,47 +67,98 @@
         </p>
 
         <div class="components-grid">
+            
+            <!-- Tarjeta 1 con Overlay Glassmorphism -->
             <div class="component-card">
-                <img src="img/arduinomega.jpg" alt="Arduino Mega 2560" class="component-img">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="img/arduinomega.jpg" alt="Arduino Mega 2560" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Arduino Mega 2560</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Unidad central de procesamiento y cálculo cinemático en C++.</p>
+                        <span class="overlay-badge">Especificación: ATmega2560 | 16 MHz</span>
+                    </div>
+                </div>
                 <h3>Arduino Mega 2560</h3>
-                <p>Unidad central de procesamiento encargada del cálculo cinemático, la generación de señales de tiempo y la gestión de periféricos de entrada y salida.</p>
+                <p>Unidad central encargada de resolver la cinemática inversa, generar señales de pulso/dirección y gestionar la interfaz de usuario.</p>
             </div>
 
+            <!-- Tarjeta 2 con Overlay Glassmorphism -->
             <div class="component-card">
-                <img src="img/17HS4401.jpg" alt="Motor Paso a Paso NEMA 17" class="component-img">
-                <h3>2x Motores NEMA 17 (17HS4401S)</h3>
-                <p>Actuadores bipolares responsables de la rotación azimutal (θ1) y la elevación polar (θ2), aportando la fuerza necesaria para vencer la inercia de la estructura.</p>
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="img/17HS4401.jpg" alt="Motor Paso a Paso NEMA 17" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>NEMA 17 (17HS4401S)</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Rotación azimutal (&theta;1) y elevación polar (&theta;2).</p>
+                        <span class="overlay-badge">Torque: 40 N·cm | Bipolar</span>
+                    </div>
+                </div>
+                <h3>2x Motores NEMA 17</h3>
+                <p>Actuadores de alto torque responsables del movimiento en las articulaciones rotacionales principales del brazo.</p>
             </div>
 
+            <!-- Tarjeta 3 con Overlay Glassmorphism -->
             <div class="component-card">
-                <img src="img/tb6600.jpg" alt="Driver TB6600" class="component-img">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="img/tb6600.jpg" alt="Driver TB6600" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Driver TB6600</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Etapa de potencia y conmutación de micropasos para NEMA 17.</p>
+                        <span class="overlay-badge">Aislamiento optoacoplado | 4.0A MAX</span>
+                    </div>
+                </div>
                 <h3>2x Drivers TB6600</h3>
-                <p>Etapas de potencia con regulación de corriente constante y aislamiento óptico, optimizadas para un manejo eficiente de micropasos.</p>
+                <p>Controladores con regulación de corriente constante para un movimiento suave y protección de sobrecalentamiento.</p>
             </div>
 
+            <!-- Tarjeta 4 con Overlay Glassmorphism -->
             <div class="component-card">
-                <img src="img/28byj.jpg" alt="Motor 28BYJ-48" class="component-img">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="img/28byj.jpg" alt="Motor 28BYJ-48" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Motor 28BYJ-48</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Transmisión lineal prismática de la cremallera (e).</p>
+                        <span class="overlay-badge">Pasos: 2048 ppr | Unipolar 5V</span>
+                    </div>
+                </div>
                 <h3>Motor 28BYJ-48</h3>
-                <p>Actuador de precisión para la transmisión lineal de la cremallera (e), responsable del desplazamiento prismático del efector final.</p>
+                <p>Actuador de precisión para la articulación prismática responsable de la extensión y retracción del efector final.</p>
             </div>
 
+            <!-- Tarjeta 5 con Overlay Glassmorphism -->
             <div class="component-card">
-                <img src="img/uln2003.jpg" alt="Driver ULN2003APG" class="component-img">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="img/uln2003.jpg" alt="Driver ULN2003APG" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>ULN2003APG</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Control de fases Darlington para el motor de extensión.</p>
+                        <span class="overlay-badge">Driver Darlington de 7 canales</span>
+                    </div>
+                </div>
                 <h3>Driver ULN2003APG</h3>
-                <p>Controlador con arreglo de transistores Darlington enfocado en la conmutación de fases para el motor unipolar de la cremallera.</p>
+                <p>Módulo de conmutación de señales para operar el motor unipolar 28BYJ-48 con indicación LED por fase.</p>
             </div>
 
+            <!-- Tarjeta 6 con Overlay Glassmorphism -->
             <div class="component-card">
-                <img src="img/fuente.jpg" alt="Fuente Conmutada 12V 10A" class="component-img">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="img/fuente.jpg" alt="Fuente Conmutada 12V 10A" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Fuente Conmutada</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Alimentación principal regulada para el sistema mecánico y de control.</p>
+                        <span class="overlay-badge">Salida: 12V DC @ 10 Amperios</span>
+                    </div>
+                </div>
                 <h3>Fuente Conmutada 12V 10A</h3>
-                <p>Suministro de energía regulada de alto rendimiento que previene caídas de voltaje ante demandas pico de torque simultáneas.</p>
+                <p>Suministro eléctrico de alta estabilidad que evita caídas de tensión cuando ambos NEMA 17 operan a carga máxima.</p>
             </div>
 
+            <!-- Pulsadores -->
             <div class="component-card">
                 <h3>Pulsadores de Control Físico</h3>
                 <p>Interrupción y ejecución manual: un pulsador inicia la trayectoria cinemática programada y el segundo alterna la liberación electromagnética de las bobinas de los motores.</p>
             </div>
 
+            <!-- Indicadores LED -->
             <div class="component-card full-width">
                 <h3>Indicadores LED de Estado</h3>
                 <p>Interfaz óptica de diagnóstico operacional instantáneo:</p>
@@ -142,7 +193,7 @@
             </div>
             <div class="spec-card">
                 <h3>Límites Operativos</h3>
-                <p>Protección automática en elevación θ2 y carrera máxima de extensión lineal e</p>
+                <p>Protección automática en elevación &theta;2 y carrera máxima de extensión lineal e</p>
             </div>
             <div class="spec-card">
                 <h3>Control de Actuación</h3>
@@ -160,7 +211,7 @@
     <section id="funcionamiento">
         <h2>Funcionamiento y Demostración</h2>
         <p>
-            El flujo de trabajo inicia cuando el microcontrolador evalúa las coordenadas de destino (X, Y, Z). A través de las funciones trigonométricas en C++, determina los ángulos exactos θ1, θ2 y la extensión requerida e.
+            El flujo de trabajo inicia cuando el microcontrolador evalúa las coordenadas de destino (X, Y, Z). A través de las funciones trigonométricas en C++, determina los ángulos exactos &theta;1, &theta;2 y la extensión requerida e.
         </p>
         <p>
             Antes de activar los motores, el algoritmo valida que las coordenadas no violen los límites de colisión físicos. Si la trayectoria es segura, el LED verde se enciende y los motores ejecutan la secuencia de movimiento paso a paso.
@@ -176,12 +227,53 @@
     </section>
 
 
-    <!-- 6. Diseño mecánico -->
+    <!-- 6. Diseño mecánico (Estructura y Piezas CAD) -->
     <section id="diseno">
-        <h2>Diseño Mecánico</h2>
+        <h2>Diseño Mecánico y Piezas 3D</h2>
         <p>
-            El brazo robótico fue diseñado mediante modelado CAD 3D (SolidWorks). Esta sección incluirá los esquemas de transmisión, soportes estructurales, planos de ensamble y dimensiones del mecanismo esférico.
+            El brazo robótico fue diseñado mediante modelado CAD 3D en SolidWorks y fabricado en impresión 3D. A continuación se detallan las principales piezas estructurales:
         </p>
+
+        <div class="components-grid">
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="img/cad_base.jpg" alt="Base del Brazo Robótico" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Base Principal</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Origen del sistema de coordenadas y soporte del motor azimutal.</p>
+                        <span class="overlay-badge">Material: Filamento PET-G</span>
+                    </div>
+                </div>
+                <h3>Base del Brazo</h3>
+                <p>Soporte inferior hueco de alta resistencia para albergar rodamientos y anclaje al plano de trabajo.</p>
+            </div>
+
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="img/cad_soporte_codo.jpg" alt="Soporte Codo" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Soporte Codo</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Estructura del primer Grado de Libertad (GDL).</p>
+                        <span class="overlay-badge">Material: PET-G (Resistencia 35 MPa)</span>
+                    </div>
+                </div>
+                <h3>Soporte Codo</h3>
+                <p>Disco estructural con radio exterior de 75 mm que transmite el par torsional del eje polar.</p>
+            </div>
+
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="img/cad_cremallera.jpg" alt="Soporte de Extensión y Cremallera" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Soporte Extensión</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Guía lineal del piñón y cremallera para el eje prismático.</p>
+                        <span class="overlay-badge">Material: PET-G de Alta Densidad</span>
+                    </div>
+                </div>
+                <h3>Soporte Extensión</h3>
+                <p>Módulo de guiado para la transmisión lineal de la cremallera, asegurando suavidad y mínimo juego mecánico.</p>
+            </div>
+        </div>
     </section>
 
 
@@ -275,17 +367,17 @@ void loop() {
   fren = digitalRead(fre);
 
   // Habilitador manual
-  if (fren == HIGH &amp;&amp; frea == LOW){
+  if (fren == HIGH && frea == LOW){
     cuen = !cuen;   // Cambia entre 0 y 1
     digitalWrite(enaPin, cuen);
     digitalWrite(enaPin2, cuen);
   }
 
-  if (th2 &gt; 45 &amp;&amp; e &lt; 113){
+  if (th2 > 45 && e < 113){
     Serial.println("Motor bloqueado por riesgo de colision");
     digitalWrite(paro, HIGH);
   }
-  else if (th2 &lt; (-21.6) || e &lt; 55){
+  else if (th2 < (-21.6) || e < 55){
     Serial.println("Motor bloqueado por riesgo de colision");
     digitalWrite(paro, HIGH);
   }
@@ -293,40 +385,40 @@ void loop() {
     Serial.println("Todo good");
   
     // Secuencia de giro
-    if (inic == HIGH &amp;&amp; inia == LOW){ 
+    if (inic == HIGH && inia == LOW){ 
       Serial.println("Ya empezo");
-      if(con &lt; 0){
+      if(con < 0){
         cona = con * (-1);
         pasos = (ppv * cona) / 12.6;
         horario();
       }
     
-      if(con &gt; 0){
+      if(con > 0){
         pasos = (ppv * con) / 12.6;
         antihorario();
       }
       delay(500);
       
-      if (th1 &lt; 0){
+      if (th1 < 0){
         run();
         digitalWrite(dirPin, LOW);
         th1n = th1 * (-1);
         gira1(th1n);
       }
-      if (th1 &gt; 0){
+      if (th1 > 0){
         run();
         digitalWrite(dirPin, HIGH);
         gira1(th1);
       }
       delay(500);
 
-      if (th2 &lt; 0) {
+      if (th2 < 0) {
         run();
         digitalWrite(dirPin2, LOW);
         th2n = th2 * (-1);
         gira2(th2n);
       }
-      if (th2 &gt; 0) {
+      if (th2 > 0) {
         run();
         digitalWrite(dirPin2, HIGH);
         gira2(th2);
@@ -354,10 +446,10 @@ void stop(){
 void gira1(long pul1) {
   long totalPasos1 = (pul1 / 360.0) * 1600.0;
 
-  for (long paso1 = 0; paso1 &lt; totalPasos1; paso1++) {
+  for (long paso1 = 0; paso1 < totalPasos1; paso1++) {
     int velocidad1 = 800;
 
-    if (paso1 &lt; 10) {
+    if (paso1 < 10) {
       velocidad1 = map(paso1, 0, 10, 3000, 800);
     }
 
@@ -371,10 +463,10 @@ void gira1(long pul1) {
 void gira2(long pul2) {
   long totalPasos2 = (pul2 / 360.0) * 1600.0;
 
-  for (long paso2 = 0; paso2 &lt; totalPasos2; paso2++) {
+  for (long paso2 = 0; paso2 < totalPasos2; paso2++) {
     int velocidad2 = 800;
 
-    if (paso2 &lt; 10) {
+    if (paso2 < 10) {
       velocidad2 = map(paso2, 0, 10, 3000, 800);
     }
 
@@ -386,7 +478,7 @@ void gira2(long pul2) {
 }
 
 void horario (){
-  for (int i = 0; i &lt; pasos; i++){
+  for (int i = 0; i < pasos; i++){
     int pin = i % 4 + 2; 
     digitalWrite(pin, HIGH);
     digitalWrite(pinan, LOW);
@@ -397,7 +489,7 @@ void horario (){
 }
 
 void antihorario (){
-  for (int i = 0; i &lt; pasos; i++){
+  for (int i = 0; i < pasos; i++){
     int pin = (i % 4 - 5) * (-1); 
     digitalWrite(pin, HIGH);
     digitalWrite(pinan, LOW);
@@ -437,13 +529,11 @@ void antihorario (){
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
 
-        // Alternar el menú al hacer clic en el botón
         mobileMenu.addEventListener('click', () => {
             mobileMenu.classList.toggle('is-active');
             navLinks.classList.toggle('active');
         });
 
-        // Cerrar el menú al hacer clic en cualquier enlace
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('is-active');
