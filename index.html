@@ -32,7 +32,7 @@
                 <a href="#componentes">Componentes</a>
                 <a href="#especificaciones">Especificaciones</a>
                 <a href="#funcionamiento">Funcionamiento</a>
-                <a href="#diseno">Diseño</a>
+                <a href="#diseno">Diseño Mecánico</a>
                 <a href="#programacion">Programación</a>
             </div>
         </div>
@@ -68,7 +68,6 @@
 
         <div class="components-grid">
             
-            <!-- Tarjeta 1 con Overlay Glassmorphism -->
             <div class="component-card">
                 <div class="card-image-wrapper" tabindex="0">
                     <img src="img/arduinomega.jpg" alt="Arduino Mega 2560" class="component-img">
@@ -82,7 +81,6 @@
                 <p>Unidad central encargada de resolver la cinemática inversa, generar señales de pulso/dirección y gestionar la interfaz de usuario.</p>
             </div>
 
-            <!-- Tarjeta 2 con Overlay Glassmorphism -->
             <div class="component-card">
                 <div class="card-image-wrapper" tabindex="0">
                     <img src="img/17HS4401.jpg" alt="Motor Paso a Paso NEMA 17" class="component-img">
@@ -96,7 +94,6 @@
                 <p>Actuadores de alto torque responsables del movimiento en las articulaciones rotacionales principales del brazo.</p>
             </div>
 
-            <!-- Tarjeta 3 con Overlay Glassmorphism -->
             <div class="component-card">
                 <div class="card-image-wrapper" tabindex="0">
                     <img src="img/tb6600.jpg" alt="Driver TB6600" class="component-img">
@@ -110,7 +107,6 @@
                 <p>Controladores con regulación de corriente constante para un movimiento suave y protección de sobrecalentamiento.</p>
             </div>
 
-            <!-- Tarjeta 4 con Overlay Glassmorphism -->
             <div class="component-card">
                 <div class="card-image-wrapper" tabindex="0">
                     <img src="img/28byj.jpg" alt="Motor 28BYJ-48" class="component-img">
@@ -124,7 +120,6 @@
                 <p>Actuador de precisión para la articulación prismática responsable de la extensión y retracción del efector final.</p>
             </div>
 
-            <!-- Tarjeta 5 con Overlay Glassmorphism -->
             <div class="component-card">
                 <div class="card-image-wrapper" tabindex="0">
                     <img src="img/uln2003.jpg" alt="Driver ULN2003APG" class="component-img">
@@ -138,7 +133,6 @@
                 <p>Módulo de conmutación de señales para operar el motor unipolar 28BYJ-48 con indicación LED por fase.</p>
             </div>
 
-            <!-- Tarjeta 6 con Overlay Glassmorphism -->
             <div class="component-card">
                 <div class="card-image-wrapper" tabindex="0">
                     <img src="img/fuente.jpg" alt="Fuente Conmutada 12V 10A" class="component-img">
@@ -152,13 +146,11 @@
                 <p>Suministro eléctrico de alta estabilidad que evita caídas de tensión cuando ambos NEMA 17 operan a carga máxima.</p>
             </div>
 
-            <!-- Pulsadores -->
             <div class="component-card">
                 <h3>Pulsadores de Control Físico</h3>
                 <p>Interrupción y ejecución manual: un pulsador inicia la trayectoria cinemática programada y el segundo alterna la liberación electromagnética de las bobinas de los motores.</p>
             </div>
 
-            <!-- Indicadores LED -->
             <div class="component-card full-width">
                 <h3>Indicadores LED de Estado</h3>
                 <p>Interfaz óptica de diagnóstico operacional instantáneo:</p>
@@ -227,52 +219,183 @@
     </section>
 
 
-    <!-- 6. Diseño mecánico (Estructura y Piezas CAD) -->
+    <!-- 6. Diseño mecánico (12 Piezas CAD) -->
     <section id="diseno">
-        <h2>Diseño Mecánico y Piezas 3D</h2>
+        <h2>Diseño Mecánico y Estructura 3D</h2>
         <p>
-            El brazo robótico fue diseñado mediante modelado CAD 3D en SolidWorks y fabricado en impresión 3D. A continuación se detallan las principales piezas estructurales:
+            El brazo robótico fue modelado en CAD 3D (SolidWorks) y fabricado en filamento <strong>PET-G</strong> (densidad ~1.27 g/cm³, resistencia a la tracción de 25 a 35 MPa). A continuación se presentan las 12 piezas estructurales y ensambles de transmisión:
         </p>
 
         <div class="components-grid">
+
+            <!-- 1. Base -->
             <div class="component-card">
                 <div class="card-image-wrapper" tabindex="0">
-                    <img src="img/cad_base.jpg" alt="Base del Brazo Robótico" class="component-img">
+                    <img src="Piezas/Base.png" alt="Base del Brazo Robótico" class="component-img">
                     <div class="glass-overlay">
                         <h4>Base Principal</h4>
-                        <p class="overlay-func"><strong>Función:</strong> Origen del sistema de coordenadas y soporte del motor azimutal.</p>
-                        <span class="overlay-badge">Material: Filamento PET-G</span>
+                        <p class="overlay-func"><strong>Función:</strong> Soportar el peso total del brazo y actuar como origen de coordenadas del sistema.</p>
+                        <span class="overlay-badge">PET-G | 100 x 100 x 55 mm</span>
                     </div>
                 </div>
-                <h3>Base del Brazo</h3>
-                <p>Soporte inferior hueco de alta resistencia para albergar rodamientos y anclaje al plano de trabajo.</p>
+                <h3>Base</h3>
+                <p>Ortoedro hueco con vaciados laterales para optimizar peso, montaje superior de motor a pasos y alojamientos para 4 portabaleros.</p>
             </div>
 
+            <!-- 2. Soporte Baleros -->
             <div class="component-card">
                 <div class="card-image-wrapper" tabindex="0">
-                    <img src="img/cad_soporte_codo.jpg" alt="Soporte Codo" class="component-img">
+                    <img src="Piezas/Soportebalero.png" alt="Soporte Baleros" class="component-img">
                     <div class="glass-overlay">
-                        <h4>Soporte Codo</h4>
-                        <p class="overlay-func"><strong>Función:</strong> Estructura del primer Grado de Libertad (GDL).</p>
-                        <span class="overlay-badge">Material: PET-G (Resistencia 35 MPa)</span>
+                        <h4>Soporte Balero (x4)</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Alojar rodamientos y sostener el soporte de codo reduciendo fricción.</p>
+                        <span class="overlay-badge">PET-G | L: 28 mm | R: 8 mm</span>
                     </div>
                 </div>
-                <h3>Soporte Codo</h3>
-                <p>Disco estructural con radio exterior de 75 mm que transmite el par torsional del eje polar.</p>
+                <h3>Soporte Balero</h3>
+                <p>Pieza cilíndrica con pestaña central que actúa como tope axial para un correcto alineamiento al incrustarse en la base.</p>
             </div>
 
+            <!-- 3. Soporte de Codo -->
             <div class="component-card">
                 <div class="card-image-wrapper" tabindex="0">
-                    <img src="img/cad_cremallera.jpg" alt="Soporte de Extensión y Cremallera" class="component-img">
+                    <img src="Piezas/Soportescodo.png" alt="Soporte de Codo" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Soporte de Codo</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Soportar la articulación del codo y transmitir el 1er GDL desde el motor inferior.</p>
+                        <span class="overlay-badge">PET-G | R_ext: 75 mm | e: 7 mm</span>
+                    </div>
+                </div>
+                <h3>Soporte de Codo</h3>
+                <p>Disco estructural con 2 costillas de refuerzo ortogonales en cruz, acople ranurado para eje de motor y 4 anclajes perimetrales.</p>
+            </div>
+
+            <!-- 4. Soporte Codo-balero -->
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="Piezas/Soportecodobalero.png" alt="Soporte Codo-balero" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Soporte Codo-Balero</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Repartir el peso del eslabón final y brindar estabilidad estructural.</p>
+                        <span class="overlay-badge">PET-G | H: 83.5 mm | Base: 48 mm</span>
+                    </div>
+                </div>
+                <h3>Soporte Codo-balero</h3>
+                <p>Estructura de soporte con disco interior de Ø22 mm para incrustar balero radial, reforzada con 2 barras tangentes y una central.</p>
+            </div>
+
+            <!-- 5. Soporte Codo-Motor -->
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="Piezas/Soportecodomotor.png" alt="Soporte Codo-Motor" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Soporte Codo-Motor</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Sostener la articulación y el motor a pasos del 2do GDL (elevación polar).</p>
+                        <span class="overlay-badge">PET-G | 89.5 x 48 x 7 mm</span>
+                    </div>
+                </div>
+                <h3>Soporte Codo-Motor</h3>
+                <p>Soporte de perfil perpendicular diseñado para alojar un rodamiento radial de Ø22 mm y 4 cortes de sujeción directa de motor.</p>
+            </div>
+
+            <!-- 6. Brazo Balero -->
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="Piezas/Brazobalero.png" alt="Brazo Balero" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Brazo Balero</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Conectar el soporte de codo con la articulación prismática final.</p>
+                        <span class="overlay-badge">PET-G | L: 58 mm | Ø_ext: 36 mm</span>
+                    </div>
+                </div>
+                <h3>Brazo Balero</h3>
+                <p>Eslabón conector con eje acoplado al disco interior para ensamble en balero y 2 pestañas de sujeción para la articulación extensible.</p>
+            </div>
+
+            <!-- 7. Brazo Motor -->
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="Piezas/Brazomotor.png" alt="Brazo Motor" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Brazo Motor</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Transmitir movimiento entre el soporte de codo y el siguiente eslabón.</p>
+                        <span class="overlay-badge">PET-G | L: 55 mm | Ø_ext: 30 mm</span>
+                    </div>
+                </div>
+                <h3>Brazo Motor</h3>
+                <p>Pieza conector con eje cilíndrico para balero y chavetero ranurado coincidente con el eje del motor para transmisión de par sin deslizamiento.</p>
+            </div>
+
+            <!-- 8. Soporte Extensión -->
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="Piezas/Soporteextension.png" alt="Soporte Extensión" class="component-img">
                     <div class="glass-overlay">
                         <h4>Soporte Extensión</h4>
-                        <p class="overlay-func"><strong>Función:</strong> Guía lineal del piñón y cremallera para el eje prismático.</p>
-                        <span class="overlay-badge">Material: PET-G de Alta Densidad</span>
+                        <p class="overlay-func"><strong>Función:</strong> Guía de deslizamiento del piñón-cremallera y montura del motor lineal.</p>
+                        <span class="overlay-badge">PET-G | Multisección 7 mm</span>
                     </div>
                 </div>
                 <h3>Soporte Extensión</h3>
-                <p>Módulo de guiado para la transmisión lineal de la cremallera, asegurando suavidad y mínimo juego mecánico.</p>
+                <p>Módulo de guiado formado por 3 estructuras tipo ortoedro (exteriores: 39x39x7 mm, interior: 79x54x7 mm) unidas por travesaños.</p>
             </div>
+
+            <!-- 9. Piñón -->
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="Piezas/Piñon.png" alt="Piñón" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Piñón de Transmisión</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Convertir el movimiento rotacional del motor en avance lineal.</p>
+                        <span class="overlay-badge">PET-G | Diente de Involuta</span>
+                    </div>
+                </div>
+                <h3>Piñón</h3>
+                <p>Engranaje de precisión para acoplamiento mecánico directo sobre la cremallera del 3er GDL (extensión prismática e).</p>
+            </div>
+
+            <!-- 10. Cremallera -->
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="Piezas/Cremallera.png" alt="Cremallera Lineal" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Cremallera Lineal</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Eslabón prismático móvil para el posicionamiento radial del efector final.</p>
+                        <span class="overlay-badge">PET-G | Avance: 12.6 cm/rev</span>
+                    </div>
+                </div>
+                <h3>Cremallera</h3>
+                <p>Barra dentada de precisión diseñada para un recorrido lineal suave y guiado dentro de la estructura de extensión.</p>
+            </div>
+
+            <!-- 11. Transmisión Piñón-Cremallera -->
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="Piezas/Piñoncremallera.png" alt="Transmisión Piñón-Cremallera" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Mecanismo Piñón-Cremallera</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Conversión de movimiento rotacional a desplazamiento tangencial.</p>
+                        <span class="overlay-badge">Relación: 12.6 cm por vuelta</span>
+                    </div>
+                </div>
+                <h3>Ensamble Piñón-Cremallera</h3>
+                <p>Articulación prismática completa encargada de extender y retraer el brazo con una constante de avance de 12.6 cm/vuelta.</p>
+            </div>
+
+            <!-- 12. Tren de Engranajes -->
+            <div class="component-card">
+                <div class="card-image-wrapper" tabindex="0">
+                    <img src="Piezas/Tren.png" alt="Tren de Engranajes" class="component-img">
+                    <div class="glass-overlay">
+                        <h4>Tren de Engranajes 1:1</h4>
+                        <p class="overlay-func"><strong>Función:</strong> Desplazar axialmente el eje motriz para librar interferencias físicas.</p>
+                        <span class="overlay-badge">Relación de Transmisión 1:1</span>
+                    </div>
+                </div>
+                <h3>Tren de Engranajes</h3>
+                <p>Par de engranes directos que permiten distanciar físicamente el motor del eje principal de articulación manteniendo velocidad y torque.</p>
+            </div>
+
         </div>
     </section>
 
@@ -356,8 +479,8 @@ void setup() {
   th1 = atan2(x,(z*-1))* (180 / PI);
   h = sqrt(x*x + z*z);
   th2 = atan2(a,h) * (180 / PI);
-  e = ((sqrt(a*a + h*h)) - 50); // Va a ser e-78mm porque es lo menos que puede estar la cremallera, 
-  con = (e - 78) / 10;          // e incluso menos con la restriccion del espacio
+  e = ((sqrt(a*a + h*h)) - 50); // Va a ser e-78mm porque es lo menos que puede estar la cremallera
+  con = (e - 78) / 10;
 }
 
 void loop() {
