@@ -29,6 +29,7 @@
             <div class="nav-links" id="nav-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#descripcion">Descripción</a>
+                <a href="#equipo">Equipo</a>
                 <a href="#componentes">Componentes</a>
                 <a href="#especificaciones">Especificaciones</a>
                 <a href="#funcionamiento">Funcionamiento</a>
@@ -59,7 +60,41 @@
     </section>
 
 
-    <!-- 3. Componentes -->
+    <!-- 3. Equipo de Desarrollo -->
+    <section id="equipo">
+        <h2>Equipo de Desarrollo</h2>
+        <p>Integrantes del proyecto de diseño, desarrollo cinemático e implementación mecatrónica:</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar">KZ</div>
+                <h3>Kevin Arturo Zambrano Hernández</h3>
+                <p>Ingeniería y Desarrollo Mecatrónico</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">AG</div>
+                <h3>Alfonso Guzmán Aldana</h3>
+                <p>Ingeniería y Desarrollo Mecatrónico</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">EG</div>
+                <h3>Ever Yair Marcelino Gómez</h3>
+                <p>Ingeniería y Desarrollo Mecatrónico</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">JP</div>
+                <h3>José Manuel Pérez Hernandez</h3>
+                <p>Ingeniería y Desarrollo Mecatrónico</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">RA</div>
+                <h3>Ricardo Antonio Arenas Vega</h3>
+                <p>Ingeniería y Desarrollo Mecatrónico</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. Componentes -->
     <section id="componentes">
         <h2>Componentes Electrónicos y Hardware</h2>
         <p>
@@ -148,7 +183,7 @@
 
             <div class="component-card">
                 <h3>Pulsadores de Control Físico</h3>
-                <p>Interrupción y ejecución manual: un pulsador inicia la trayectoria cinemática programada y el segundo alterna la liberación electromagnética de las bobinas de los motores.</p>
+                <p>Interrupción y ejecución manual: pulsadores dedicados para la secuencia de inicio, retorno seguro y conmutación de freno/habilitador.</p>
             </div>
 
             <div class="component-card full-width">
@@ -164,7 +199,7 @@
     </section>
 
 
-    <!-- 4. Especificaciones Técnicas -->
+    <!-- 5. Especificaciones Técnicas -->
     <section id="especificaciones">
         <h2>Especificaciones Técnicas</h2>
         <p>
@@ -189,7 +224,7 @@
             </div>
             <div class="spec-card">
                 <h3>Control de Actuación</h3>
-                <p>Control por pulsos y dirección (PUL/DIR) con aceleración progresiva implementada</p>
+                <p>Control por pulsos y dirección (PUL/DIR) con aceleración progresiva e inversión de sentido</p>
             </div>
             <div class="spec-card">
                 <h3>Interfaz de Usuario</h3>
@@ -199,14 +234,14 @@
     </section>
 
 
-    <!-- 5. Funcionamiento -->
+    <!-- 6. Funcionamiento -->
     <section id="funcionamiento">
         <h2>Funcionamiento y Demostración</h2>
         <p>
             El flujo de trabajo inicia cuando el microcontrolador evalúa las coordenadas de destino (X, Y, Z). A través de las funciones trigonométricas en C++, determina los ángulos exactos &theta;1, &theta;2 y la extensión requerida e.
         </p>
         <p>
-            Antes de activar los motores, el algoritmo valida que las coordenadas no violen los límites de colisión físicos. Si la trayectoria es segura, el LED verde se enciende y los motores ejecutan la secuencia de movimiento paso a paso.
+            Antes de activar los motores, el algoritmo valida que las coordenadas no violen los límites de colisión físicos. Si la trayectoria es segura, el LED verde se enciende y los motores ejecutan la secuencia de movimiento paso a paso tanto en trayectoria directa como en rutina de regreso.
         </p>
         
         <div class="video-container-local">
@@ -219,7 +254,7 @@
     </section>
 
 
-    <!-- 6. Diseño mecánico (12 Piezas CAD) -->
+    <!-- 7. Diseño mecánico (12 Piezas CAD) -->
     <section id="diseno">
         <h2>Diseño Mecánico y Estructura 3D</h2>
         <p>
@@ -400,11 +435,11 @@
     </section>
 
 
-    <!-- 7. Programación -->
+    <!-- 8. Programación -->
     <section id="programacion">
         <h2>Programación y Control</h2>
         <p>
-            El firmware en C++ calcula la cinemática inversa a partir de las coordenadas cartesianas de entrada (X, Y, Z) para determinar los ángulos articulados (th1, th2) y la extensión de la cremallera (e). Incluye algoritmos de protección anti-colisión en tiempo real, habilitador manual y aceleración gradual para los motores paso a paso.
+            El firmware en C++ calcula la cinemática inversa a partir de las coordenadas cartesianas de entrada (X, Y, Z) para determinar los ángulos articulados (th1, th2) y la extensión de la cremallera (e). Incluye algoritmos de protección anti-colisión en tiempo real, rutinas de secuencia de inicio/regreso seguro e interrupción manual de freno.
         </p>
 
         <div class="code-header">
@@ -413,9 +448,9 @@
         </div>
 
         <div class="code-block">
-<pre><code id="codigo-arduino">float x = -130;
-float y = 150;
-float z = -80;
+<pre><code id="codigo-arduino">float x = 100;
+float y = 100;
+float z = 100;
 float th1 = 0;
 float th1n = 0;
 float th2 = 0;
@@ -438,16 +473,20 @@ float cona = 0;
 int pasos = 0;
 int pinan = 0;
 
-int paro = 19;
-int pausa = 20;
-int giro = 21;
-int ini = 8;
+int paro = 10;
+int pausa = 9;
+int giro = 8;
+int ini = 12;
 int inia;
 int inic;
-int fre = 9;
+int fre = 13;
 int fren;
 int frea;
 int cuen;
+int reg = 11;
+int regr;
+int rega;
+int seguro;
 
 void setup() {
   Serial.begin(9600);
@@ -469,6 +508,7 @@ void setup() {
   pinMode(giro, OUTPUT);
   pinMode(inic, INPUT);
   pinMode(fre, INPUT);
+  pinMode(reg, INPUT);
 
   digitalWrite(enaPin, HIGH); 
   digitalWrite(enaPin2, HIGH);
@@ -479,102 +519,151 @@ void setup() {
   th1 = atan2(x,(z*-1))* (180 / PI);
   h = sqrt(x*x + z*z);
   th2 = atan2(a,h) * (180 / PI);
-  e = ((sqrt(a*a + h*h)) - 50); // Va a ser e-78mm porque es lo menos que puede estar la cremallera
+  e = ((sqrt(a*a + h*h)) - 50); 
   con = (e - 78) / 10;
+  
+  seguro = 0;
+
 }
 
 void loop() {
   inic = digitalRead(ini);
-  Serial.println(e);
-  Serial.println(con);
   fren = digitalRead(fre);
+  regr = digitalRead(reg);
+  Serial.println(seguro);
 
-  // Habilitador manual
   if (fren == HIGH && frea == LOW){
-    cuen = !cuen;   // Cambia entre 0 y 1
+    cuen = !cuen;   
     digitalWrite(enaPin, cuen);
     digitalWrite(enaPin2, cuen);
-  }
 
+  }
   if (th2 > 45 && e < 113){
     Serial.println("Motor bloqueado por riesgo de colision");
     digitalWrite(paro, HIGH);
   }
-  else if (th2 < (-21.6) || e < 55){
+  else if (th2 < (-19) || e < 55 || e > 220){
     Serial.println("Motor bloqueado por riesgo de colision");
     digitalWrite(paro, HIGH);
   }
   else {
-    Serial.println("Todo good");
-  
-    // Secuencia de giro
+    Serial.println("No hay colisiones, listo para usar");
+ 
     if (inic == HIGH && inia == LOW){ 
-      Serial.println("Ya empezo");
-      if(con < 0){
-        cona = con * (-1);
-        pasos = (ppv * cona) / 12.6;
-        horario();
-      }
-    
-      if(con > 0){
-        pasos = (ppv * con) / 12.6;
-        antihorario();
-      }
-      delay(500);
-      
-      if (th1 < 0){
-        run();
-        digitalWrite(dirPin, LOW);
-        th1n = th1 * (-1);
-        gira1(th1n);
-      }
-      if (th1 > 0){
-        run();
-        digitalWrite(dirPin, HIGH);
-        gira1(th1);
-      }
-      delay(500);
-
-      if (th2 < 0) {
-        run();
-        digitalWrite(dirPin2, LOW);
-        th2n = th2 * (-1);
-        gira2(th2n);
-      }
-      if (th2 > 0) {
-        run();
-        digitalWrite(dirPin2, HIGH);
-        gira2(th2);
-      }
-      delay(500);
+    inicio();
+    }
+    if (regr == HIGH && rega == LOW && seguro == 1){
+    regreso();
     }
   }
-
   stop();
   delay(50);
-  inia = inic;
-  frea = fren;
+inia = inic;
+frea = fren;
+rega = regr;
 }
 
 void run(){
   digitalWrite(pausa, LOW);
   digitalWrite(giro, HIGH);
 }
-
 void stop(){
   digitalWrite(giro, LOW);
   digitalWrite(pausa, HIGH);
 }
+void inicio(){
+    if(con < 0){
+    run();
+    cona = con * (-1);
+    pasos = (ppv * cona) / 12.6;
+    horario();
+    }
+  
+    if(con > 0){
+    run();
+    pasos = (ppv * con) / 12.6;
+    antihorario();
+    }
+    delay(500);
+    
+    if (th1 < 0){
+    run();
+    digitalWrite(dirPin, LOW);
+    th1n = th1 * (-1);
+    gira1(th1n);
+    }
+    if (th1 > 0){
+    run();
+    digitalWrite(dirPin, HIGH);
+    gira1(th1);
+    }
+    delay(500);
 
+   if (th2 < 0) {
+    run();
+    digitalWrite(dirPin2, LOW);
+    th2n = th2 * (-1);
+    gira2(th2n);
+    }
+    if (th2 > 0) {
+    run();
+    digitalWrite(dirPin2, HIGH);
+    gira2(th2);
+    }
+    delay(500);
+    seguro = 1;
+}
+void regreso(){
+    if(con < 0){
+    run();
+    cona = con * (-1);
+    pasos = (ppv * cona) / 12.6;
+    antihorario();
+    }
+  
+    if(con > 0){
+    run();
+    pasos = (ppv * con) / 12.6;
+    horario();
+    }
+    delay(500);
+    
+    if (th1 < 0){
+    run();
+    digitalWrite(dirPin, HIGH);
+    th1n = th1 * (-1);
+    gira1(th1n);
+    }
+    if (th1 > 0){
+    run();
+    digitalWrite(dirPin, LOW);
+    gira1(th1);
+    }
+    delay(500);
+
+   if (th2 < 0) {
+    run();
+    digitalWrite(dirPin2, HIGH);
+    th2n = th2 * (-1);
+    gira2(th2n);
+    }
+    if (th2 > 0) {
+    run();
+    digitalWrite(dirPin2, LOW);
+    gira2(th2);
+    }
+    delay(500);
+    seguro = 0;
+}
 void gira1(long pul1) {
   long totalPasos1 = (pul1 / 360.0) * 1600.0;
 
   for (long paso1 = 0; paso1 < totalPasos1; paso1++) {
-    int velocidad1 = 800;
+      int velocidad1 = 800;
 
-    if (paso1 < 10) {
-      velocidad1 = map(paso1, 0, 10, 3000, 800);
-    }
+      if (paso1 < 10) {
+        velocidad1 = map(paso1, 0, 10, 3000, 800);
+      }
 
     digitalWrite(pulPin, HIGH);
     delayMicroseconds(velocidad1);
@@ -590,7 +679,7 @@ void gira2(long pul2) {
     int velocidad2 = 800;
 
     if (paso2 < 10) {
-      velocidad2 = map(paso2, 0, 10, 3000, 800);
+        velocidad2 = map(paso2, 0, 10, 3000, 800);
     }
 
     digitalWrite(pulPin2, HIGH);
@@ -605,8 +694,9 @@ void horario (){
     int pin = i % 4 + 2; 
     digitalWrite(pin, HIGH);
     digitalWrite(pinan, LOW);
-    delayMicroseconds(800);
+    delayMicroseconds(1760);
     Serial.println(pin);
+    Serial.println(pinan);
     pinan = pin;
   }
 }
@@ -616,8 +706,9 @@ void antihorario (){
     int pin = (i % 4 - 5) * (-1); 
     digitalWrite(pin, HIGH);
     digitalWrite(pinan, LOW);
-    delayMicroseconds(800);
+    delayMicroseconds(1760);
     Serial.println(pin);
+    Serial.println(pinan);
     pinan = pin;
   }
 }</code></pre>
