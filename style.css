@@ -116,7 +116,7 @@ section p {
     font-size: 1rem;
 }
 
-/* Grid de Componentes */
+/* Grid de Componentes y Piezas CAD */
 .components-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -144,10 +144,7 @@ section p {
     grid-column: 1 / -1;
 }
 
-/* =========================================
-   CONTENEDOR DE IMAGEN Y GLASSMORPHISM OVERLAY
-========================================= */
-
+/* Contenedor de Imagen con Overlay Glassmorphism */
 .card-image-wrapper {
     position: relative;
     width: 100%;
@@ -168,11 +165,11 @@ section p {
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Capa semitransparente con efecto despulido (Glassmorphism) */
+/* Capa semitransparente despulida */
 .glass-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(15, 23, 42, 0.82);
+    background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: #ffffff;
@@ -214,7 +211,7 @@ section p {
     font-weight: 600;
 }
 
-/* Efectos al pasar el cursor o tocar (hover / focus / active) */
+/* Activación de efectos por hover, focus o touch */
 .card-image-wrapper:hover .component-img,
 .card-image-wrapper:focus .component-img,
 .card-image-wrapper:active .component-img {
@@ -391,10 +388,7 @@ footer {
     font-size: 0.85rem;
 }
 
-/* =========================================
-   ESTILOS PARA MENÚ MÓVIL (RESPONSIVE)
-========================================= */
-
+/* Estilos de Menú Móvil Responsive */
 .menu-toggle {
     display: none;
     flex-direction: column;
